@@ -1,0 +1,177 @@
+<div class="content-i">
+            <div class="content-box"><div class="element-wrapper">
+  
+  <div class="element-box">
+    <h5 class="form-header">
+     {$rebate_data['id']} # <?php echo  date('Y-m-d H:i:s',$rebate_data['time']); ?>
+    </h5>
+
+    <div class="form-desc"  id="timer" >请于 <code>5分钟</code> 内操作完毕 <code>5分钟后</code> 本次会话将超时 从打开页面开始计算:
+    </div>
+    <!--------------------
+    START - Controls Above Table
+    -------------------->
+    <div class="controls-above-table">
+      <div class="row">
+
+        
+        
+        
+        <div class="col-sm-12">
+          <span class="btn btn-sm btn-primary">金额：{$rebate_data['money']}</span>
+          <span class="btn btn-sm btn-light">{$rebate_data['info']}</span>
+        </div>
+
+        
+      </div>
+      
+      
+        
+        
+        
+        <br><br>
+        
+      <div class="row">
+  
+        <div class="col-sm-6">
+    
+ 
+    <div class="profile-tile">
+      <a class="profile-tile-box">
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         获得人        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            UID：<strong>{$rebate_get_data['id']}</strong>
+          </li>
+          <li>
+            账户：<strong>{$rebate_get_data['username']}</strong>
+          </li>
+          <li>
+            微信：<strong>{$rebate_get_data['weichat']}</strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-danger btn-sm" href="<?php echo url('user/edit'); ?>?edit_id={$rebate_get_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank">用户详情</a>
+        </div>
+      </div>
+    </div>
+ 
+    
+
+  </div>
+        
+      
+      
+      
+      
+             <div class="col-sm-6">
+    
+ 
+    <div class="profile-tile">
+      <a class="profile-tile-box">
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         提供人        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            ID：<strong>{$rebate_give_data['id']}</strong>
+          </li>
+          <li>
+            账户：<strong>{$rebate_give_data['username']}</strong>
+          </li>
+          <li>
+            微信：<strong>{$rebate_give_data['weichat']}</strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-primary btn-sm" href="<?php echo url('user/edit'); ?>?edit_id={$rebate_give_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank">用户详情</a>
+        </div>
+      </div>
+    </div>
+ 
+    
+
+  </div>
+      
+      
+      
+      
+  </div>      
+      
+      
+      
+      
+    </div>
+
+  </div>
+</div>
+
+
+
+            </div>
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                  //  msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                 //   document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 如需继续操作，请返回激活码列表再次访问！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+   <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                如需继续操作，请返回激活码列表再次访问！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

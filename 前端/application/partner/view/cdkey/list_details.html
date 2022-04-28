@@ -1,0 +1,95 @@
+
+<div class="lime-container">
+    <div class="lime-body">
+<div class="container">
+
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="invoice-header">
+                                                <h5>激活码列表</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="invoice-header">
+                                                <h4 class="float-right"># {$cdkey_type_data['id']}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="table-responsive m-t-xxl">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">激活码</th>
+                                                            <th scope="col">状态</th>
+                                                            <th scope="col" class="text-right">使用时间</th>
+                                                            <th scope="col" class="text-right">使用者ID</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    	{volist name="cdkey_list" id="cdkey_list"}	
+                                                        <tr>
+                                                            <td>{$cdkey_list['id']}</td>
+                                                            <td>{$cdkey_list['cdkey']}</td>
+                                                            
+                                                            	<?php  if($cdkey_list['y']=='1') {  ?> 
+                                                            	
+                                                            	<td>
+                                                            		<span class="badge badge-secondary">已使用</span>
+                                                            	</td>
+	                                                            	
+	                                                            <td class="text-right"><?php echo  date('Y-m-d H:i:s',$cdkey_list['stime']); ?></td>
+	                                                            <td class="text-right">{$cdkey_list['yid']}</td>
+	                                                            
+                                                            	<?php }else{ ?>
+                                                            	
+                                                            	
+                                                            	<td> </td>
+	                                                            	
+	                                                            <td class="text-right"> </td>
+	                                                            <td class="text-right"> </td>
+	                                                            
+                                                            	<?php }  ?>
+                                                            
+                                                        </tr>
+                                                        {/volist}
+
+                                                    </tbody>
+                                                </table>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8 m-t-xxl">
+                                            <div class="invoice-info">
+                                                <span class="bold m-b-md d-block">友情提示:</span>
+                                                <p>如列表中无激活码,可能是数据延迟,请稍后在查看.</p>
+                                                <p>请合理使用激活码,如影响系统正常运行可能会对您账户一定限制.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 m-t-xxl">
+                                            <div class="invoice-info">
+                                                <p>时间：<span><?php echo date("Y-m-d h:i:s", $cdkey_type_data['time']);?></span></p>
+                                                <p>类型：<span>{$cdkey_type_data['name']}</span></p>
+                                                <p>共有： <span>{$cdkey_type_data['number']}</span></p>
+                                                <p>已用： <span>{$cdkey_type_data['invalid']}</span></p>
+                                                <p class="bold">剩余： <span><?php echo $cdkey_type_data['number']-$cdkey_type_data['invalid'] ; ?></span></p>
+                                              <!--  <button type="button" class="btn btn-primary btn-block">DOWN</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+

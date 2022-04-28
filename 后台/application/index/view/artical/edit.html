@@ -1,0 +1,300 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile compact">
+      <div class="up-head-w" style="background-image:url( <?php if(!empty($artical_data['picture'])){ echo $artical_data['picture'];    }else{ echo '/public/static/v4/img/portfolio15.jpg';   }  ?>)">
+       
+
+        <div class="up-main-info">
+          <h2 class="up-header">
+            {$artical_data['title']}
+          </h2>
+          <h6 class="up-sub-header">
+            更新时间： <?php echo  date('Y年m月d日',$artical_data['time']); ?>
+          </h6>
+          <h6 class="up-sub-header">
+            {$artical_data['content']}
+          </h6>
+        </div>
+        <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
+      </div>
+      <div class="up-controls">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="value-pair">
+              <div class="label">
+                弹窗:
+              </div>
+              
+                  <?php  if($artical_data['eject'] == 1){  ?>
+                  		<div class="value badge badge-pill badge-primary">YES</div>
+                  <?php  }else if($artical_data['eject'] == 0){ ?>
+                  		<div class="value badge badge-pill badge-danger">NO</div>
+                  <?php  } ?>
+              
+
+            </div>
+            
+            <?php  if($artical_data['eject'] == 1){  ?>
+                <div class="value-pair">
+              <div class="label">
+                弹窗频率:
+              </div>
+              
+                  <?php  if($artical_data['popup_rate'] == 1){  ?>
+                  		<div class="value badge badge-pill badge-danger">每次打开</div>
+                  <?php  }else if($artical_data['popup_rate'] == 0){ ?>
+                  		<div class="value badge badge-pill badge-primary">每天一次</div>
+                  <?php  } ?>
+              
+
+            </div>   
+            <?php  } ?>
+            
+            
+            
+          </div>
+          <div class="col-sm-6 text-right">
+            
+            <span class="btn btn-primary btn-sm" ><i class="os-icon os-icon-fingerprint"></i><span>{:Ryan_name()}</span></span>
+            
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <div class="col-sm-7">
+    <div class="element-wrapper">
+      <div class="element-box">
+         <form class="form-material"   role="form" id="form1" method="post" action="{:url('artical/edit')}" >
+          <div class="element-info">
+            <div class="element-info-with-icon">
+              <div class="element-info-icon">
+                <div class="os-icon os-icon-pencil-1"></div>
+              </div>
+              <div class="element-info-text">
+                <h5 class="element-inner-header">
+                  公告信息
+                </h5>
+                <div class="element-inner-desc">
+                  资料编辑.  <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  
+          
+                  <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       标题
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="输入标题" type="text" name="artical_title"  value="{$artical_data['title']}">
+                  </div>
+                </div>        
+
+           
+
+           
+  
+            <div class="form-group"><textarea class="form-control" placeholder="简介" rows="10"  name="artical_content">{$artical_data['content']}</textarea></div>
+
+           
+           
+           
+           
+           
+           
+           
+
+          <div class="row">
+
+                <div class="col-sm-6">
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        类型
+                      </div>
+                    </div>
+                    
+                  <select class="form-control"  name="artical_type"  value="{$artical_data['type']}">
+                  <option value="0" <?php if($artical_data['type'] == '0'){ echo 'selected';} ?> >公告</option>
+                  <option value="1" <?php if($artical_data['type'] == '1'){ echo 'selected';} ?>  disabled="disabled" >电影推荐</option>
+                 
+                  </select>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="date-input">
+                    <input class="single-daterange form-control" placeholder="Date of birth" type="text"  name="artical_time"  value="<?php echo  date('m/d/Y',$artical_data['time']); ?>">  
+                  </div>
+                </div>
+              </div>         
+            
+            
+          </div>
+          
+
+          <div class="row">
+            
+               <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="输入图片地址" type="text" name="artical_picture"  value="{$artical_data['picture']}"  disabled="disabled">
+                  </div>
+                </div>
+              </div>           
+            
+            
+               <div class="col-sm-6">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转地址
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="输入URL" type="text" name="artical_url"  value="{$artical_data['url']}"  disabled="disabled">
+                  </div>
+                </div>
+              </div>           
+            
+            
+          </div>
+          
+                    
+                    <br> <br>
+
+
+           <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 弹窗提示</label> 
+                <div class="help-block form-text text-muted form-control-feedback">
+                  默认每天只弹出一次
+                </div>
+              </div>
+              
+             <label class="switch ">
+               <input type="hidden"  name="artical_eject" value="0">
+              <input type="checkbox" name="artical_eject" type="checkbox"  value="1"  <?php if($artical_data['eject'] ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+             
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 强制弹窗 </label> 
+                <div class="help-block form-text text-muted form-control-feedback">
+                  每次打开APP都弹出
+                </div>
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="artical_popup_rate" value="0">
+              <input type="checkbox" name="artical_popup_rate" type="checkbox"  value="1"  <?php if($artical_data['popup_rate'] ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+             
+             
+
+
+
+          </div>
+               <br>
+
+          
+
+          
+          
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <input type="hidden" name="edit_id"  id="edit_id"   value="{$artical_data['id']}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+              
+            </div>
+
+          </div>
+
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,289 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row">
+                <div class="col-sm-12 col-xxxl-12">
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      编辑 - {$tv_data['name']}
+                    </h6>
+
+                    
+                    
+             		 <div class="element-box">
+                      <form class="form-material"   role="form" id="form1" method="post" action="{:url('live/edit_tv')}" >
+                    <div class="element-actions d-none d-sm-block">
+                      <a class="btn btn-danger btn-sm" href="<?php echo url('live/del_tv'); ?>?del_id={$tv_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-ui-15"></i><span>删除</span></a>
+                    </div>
+                      
+                    <div class="profile-tile">
+                      <a class="profile-tile-box">
+                        <div class="pt-avatar-w">
+                          <img alt="" src="<?php if(strpos($tv_data['picture'],'http://') !== false){  echo $tv_data['picture']; }else if(strpos($tv_data['picture'],'https://') !== false){  echo $tv_data['picture'];  }else{ echo input('server.REQUEST_SCHEME') . '://' . input('server.SERVER_NAME') . $tv_data['picture'] ; }  ?>">
+                        </div>
+                      </a>
+                      
+
+                      
+                    </div>
+                        
+			<div class="row">
+				
+	              <div class="col-sm-3">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       标题
+                      </div>
+                    </div><input class="form-control"  placeholder="Title" type="text" name="tv_name" value="{$tv_data['name']}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-3">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       排序
+                      </div>
+                    </div><input class="form-control"  placeholder="mun" type="number" name="tv_sort"  value="{$tv_data['sort']}" >
+                  </div>        
+            </div>             
+            		
+				
+				
+              <div class="col-sm-3">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       类型
+                      </div>
+                    </div>
+                    <select class="form-control"  name="tv_type"  value="{$tv_data['type']}">
+              <option value="1" <?php if($tv_data['type'] ==1){echo 'selected';} ?>>
+                TV直播
+              </option>
+              <option value="2" <?php if($tv_data['type'] ==2){echo 'selected';} ?>>
+                专题直播
+              </option>
+
+            </select>      
+                  </div>        
+            </div>  
+            
+            			
+
+				
+				
+              <div class="col-sm-3">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       标签
+                      </div>
+                    </div>
+                    <select class="form-control"    name="tv_state"  value="{$tv_data['state']}">
+              <option value="" <?php if($tv_data['state'] ==''){echo 'selected';} ?>>
+                无
+              </option>
+              <option value="hot" <?php if($tv_data['state'] =='hot'){echo 'selected';} ?>>
+                HOT
+              </option>
+              <option value="new" <?php if($tv_data['state'] =='new'){echo 'selected';} ?>>
+                NEW
+              </option>
+              <option value="recommendation" <?php if($tv_data['state'] =='recommendation'){echo 'selected';} ?>>
+                推荐
+              </option>
+
+            </select>      
+                  </div>        
+            </div>  
+            
+            
+            
+           </div>  
+            <br>
+            
+                
+                <div class="row">
+                
+              <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       简介
+                      </div>
+                    </div><input class="form-control"  placeholder="Content" type="text" name="tv_introduce"  value="{$tv_data['introduce']}" >
+                  </div>        
+            </div>             
+            
+          </div>       
+            
+            
+            <br>
+            
+                
+                <div class="row">
+              <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片
+                      </div>
+                    </div><input class="form-control"  placeholder="Picture" type="text" name="tv_picture"  value="{$tv_data['picture']}" >
+                  </div>        
+            </div>                   
+                
+          </div>       
+            
+            
+            
+            <br>
+            
+                
+                <div class="row">
+              <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       直播源
+                      </div>
+                    </div><input class="form-control"  placeholder="Url" type="text" name="tv_live_url"  value="{$tv_data['live_url']}" >
+                  </div>        
+            </div>                   
+                
+          </div>       
+            
+            
+            
+            
+                        
+            
+                        <div class="form-buttons-w">
+                          
+                          <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+                          <input type="hidden" name="edit_id"  id="edit_id"   value="{$tv_data['id']}" >
+                          <button class="btn btn-primary" type="submit"> 确定</button> <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-wrapper">
+                 {volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                {/volist} 
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+
+
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

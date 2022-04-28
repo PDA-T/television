@@ -1,0 +1,626 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('index/advanced_functions')}" >
+          <h5 class="form-header">
+            高级功能
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交.
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!--
+<label class="switch">
+  <input type="checkbox">
+  <div class="slider"></div>
+</label>
+
+<label class="switch">
+  <input type="checkbox" checked>
+  <div class="slider"></div>
+</label><br><br>
+
+<label class="switch">
+  <input type="checkbox">
+  <div class="slider round"></div>
+</label>
+
+<label class="switch">
+  <input type="checkbox" checked>
+  <div class="slider round"></div>
+</label>
+  -->        
+
+          <!--<div class="form-group">
+            <label for=""> APP名称</label><input class="form-control" data-error="Your email address is invalid" placeholder="Enter email" required="required" type="email">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>--->
+          
+
+       
+          
+          
+          <div class="row">
+
+           <div  class="col-sm-6">
+            <label for=""> 代理广告展示控制</label><select class="form-control"   value="advert('130')"  name="ranking_agent_ad">
+              <option value="1" <?php if(advert('130') ==1){echo 'selected';} ?>>
+                开启代理广告展示
+              </option>
+              <option value="0" <?php if(advert('130') ==0){echo 'selected';} ?>>
+                关闭代理广告展示
+              </option>
+
+            </select>               
+             <div class="help-block form-text text-muted form-control-feedback">
+                  开启代理广告展示：代理的下级用户可以看到代理设置的广告；<br>关闭代理广告展示：屏蔽代理广告统一展示管理员设置的广告；
+                </div> 
+          </div>
+            
+           <div  class="col-sm-6">
+            <label for=""> 邀请归属控制</label>
+             <select class="form-control" name="invitation_attribution_control"   value="advert('342')" name="invitation_attribution_control">
+              <option value="0" <?php if(advert('342') ==0){echo 'selected';} ?> >
+                归属给邀请人
+              </option>
+              <option value="1" <?php if(advert('342') ==1){echo 'selected';} ?> >
+                归属给代理
+              </option>
+            </select>
+             <div class="help-block form-text text-muted form-control-feedback">
+                  归属给邀请人：谁邀请的归属给谁；<br>归属给代理：如果邀请人不是代理则归属给他的上级；
+                </div>
+          </div>
+                        
+            
+          </div>
+          
+
+          
+              <br> 
+          
+          <div class="row">
+
+           <div  class="col-sm-6">
+            <label for=""> 找回密码方式</label><select class="form-control"   value="advert('92')"  name="RePassPriority">
+              <option value="1" <?php if(advert('92') ==1){echo 'selected';} ?>>
+                短信验证
+              </option>
+              <option value="0" <?php if(advert('92') ==0){echo 'selected';} ?>>
+                安全码验证
+              </option>
+
+            </select>               
+             <div class="help-block form-text text-muted form-control-feedback">
+                  两种方式并存；用户点击找回密码 优先展示哪种方式（默认安全码）
+                </div> 
+          </div>
+            
+     
+            
+          </div>
+                
+          
+          
+          
+              
+              
+             
+          <fieldset class="form-group">
+            <legend><span>短信验证码设置 - 聚合数据</span></legend>
+            
+           <div class="row">
+            <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       AppKey
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="juhe_AppKey" value="{:advert('69')}">
+                  </div>        
+            </div>   
+             
+            <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       模板ID
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="juhe_id" value="{:advert('70')}">
+                  </div>        
+            </div>   
+             
+          </div>
+              
+
+          </fieldset>           
+              
+              
+              
+              
+             
+          <fieldset class="form-group">
+            <legend><span>模块控制</span></legend>
+            
+          <div class="row">
+          	
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 动态令牌 (60秒)</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  开启后登录管理后台需要验证动态令牌
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="Dynamic_Token" value="0">
+              <input type="checkbox" name="Dynamic_Token" type="checkbox"  value="1"  <?php if(advert('7') ==1){echo 'checked';} ?>>
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+            
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 直播模块</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  首页会加载一个直播模块
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="mod_open_Live" value="0">
+              <input type="checkbox" name="mod_open_Live" type="checkbox"  value="1"  <?php if(advert('2000') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+            
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 首页公告模块</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  关闭后首页不显示(不影响弹窗公告)
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="mod_open_notice" value="0">
+              <input type="checkbox" name="mod_open_notice" type="checkbox"  value="1"  <?php if(advert('2100') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+            
+         </div>     
+     <br><br>
+         <div class="row">
+         	
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 首页搜索模块</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  首页顶部搜索
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="mod_open_search" value="0">
+              <input type="checkbox" name="mod_open_search" type="checkbox"  value="1"  <?php if(advert('312') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+                  	
+         	
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 激活码检测</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  自动检测用户复制的激活码并提示
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="ActivationCodeDetection" value="0">
+              <input type="checkbox" name="ActivationCodeDetection" type="checkbox"  value="1"  <?php if(advert('81') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+            
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 多设备同时登录检测</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  不允许同一账户在多设备登录（检测频率自调）
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="SingleSignOn" value="0">
+              <input type="checkbox" name="SingleSignOn" type="checkbox"  value="1"  <?php if(advert('82') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+
+            
+          </div>
+              
+              
+        <br><br>
+         <div class="row">
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 安全防护 ("纯阳护体") </label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                    防止阈值过高的风险;配合SSL可习得"金钟罩"
+                </div>
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="Admiralty" value="0">
+              <input type="checkbox" name="Admiralty" type="checkbox"  value="1"  <?php if(advert('91') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+
+
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 离线模式 </label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  非首次进入APP时不再与服务器验证
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="offlineState" value="0">
+              <input type="checkbox" name="offlineState" type="checkbox"  value="1"  <?php if(advert('90') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+
+            
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 设备绑定</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  开启一台设备只能注册一个账户
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"    name="deviceId" value="0">
+              <input type="checkbox" name="deviceId" value="1" <?php if(advert('6') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+
+
+
+
+            
+          </div>           
+
+
+
+           <br><br>
+          
+          <div class="row">
+            
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 代理 会员类型设置权限</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  开启后代理只能设置管理员已设置的会员类型
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="agent_activation_setup_power" value="0">
+              <input type="checkbox" name="agent_activation_setup_power" type="checkbox"  value="1"  <?php if(advert('311') ==1){echo 'checked';} ?>>
+              <div class="slider"></div>
+            </label>
+            </div>
+
+
+
+              <div class="col-sm-4">
+                  <div class="form-group">
+                      <label > 语音提示</label>
+
+                      <div class="help-block form-text text-muted form-control-feedback">
+                          会员过期后将进行提示
+                      </div>
+                  </div>
+                  <label class="switch ">
+                      <input type="hidden"  name="Vip_Voice_cues" value="0">
+                      <input name="Vip_Voice_cues" type="checkbox"  value="1"  <?php if(advert('172') ==1){echo 'checked';} ?> >
+                      <div class="slider"></div>
+                  </label>
+              </div>
+
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 底部导航简介模式</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  图标略大 去除文字
+                </div> 
+              </div>
+             <label class="switch ">
+              <input type="hidden"  name="mainFooter" value="0">
+              <input name="mainFooter" type="checkbox"  value="1"  <?php if(advert('93') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+            
+          </div>
+
+
+              
+              
+
+          </fieldset>           
+              
+              
+              
+       <fieldset class="form-group">       
+       <legend><span>维护 、 更新 临时控制</span></legend>
+          <div class="row">
+          	
+                    
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > DEBUG </label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  请保持关闭 不要随意打开！
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="debug_model" value="0">
+              <input type="checkbox" name="debug_model" type="checkbox"  value="1"  <?php if(advert('309') ==1){echo 'checked';} ?>>
+              <div class="slider"></div>
+            </label>
+            </div>  	
+          	
+          	
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 维护模式</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  开启将禁止数据写入编辑操作，便于不停机更新维护
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="maintenance_mode" value="0">
+              <input type="checkbox" name="maintenance_mode" type="checkbox"  value="1"  <?php if(advert('43') ==1){echo 'checked';} ?> >
+              <div class="slider"></div>
+            </label>
+            </div>
+            
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 代理PC管理后台开关</label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  关闭后代理禁止登录PC管理后台
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="Proxy_login" value="0">
+              <input type="checkbox" name="Proxy_login" type="checkbox"  value="1"  <?php if(advert('390') ==1){echo 'checked';} ?>>
+              <div class="slider"></div>
+            </label>
+            </div>
+
+
+          </div>
+          
+
+          
+          
+           <br><br>  
+           
+           
+              <div class="row">
+
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <label > 注册开关</label>
+
+                          <div class="help-block form-text text-muted form-control-feedback">
+                              关闭将禁止注册（维护模式下强制关闭）
+                          </div>
+                      </div>
+                      <label class="switch ">
+                          <input type="hidden"  name="register_switch" value="0">
+                          <input type="checkbox" name="register_switch" type="checkbox"  value="1"  <?php if(advert('353') ==1){echo 'checked';} ?> >
+                          <div class="slider"></div>
+                      </label>
+                  </div>
+                    
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label > 激活码生成开关 </label>
+                
+                <div class="help-block form-text text-muted form-control-feedback">
+                  关闭将禁止生成新的激活码（维护模式下强制关闭）
+                </div> 
+              </div>
+             <label class="switch ">
+               <input type="hidden"  name="CDKEY_on_off" value="0">
+              <input type="checkbox" name="CDKEY_on_off" type="checkbox"  value="1"  <?php if(advert('1100') ==1){echo 'checked';} ?>>
+              <div class="slider"></div>
+            </label>
+            </div>
+
+
+
+
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <label > 激活码使用开关 </label>
+
+                          <div class="help-block form-text text-muted form-control-feedback">
+                              关闭将禁止使用激活码（维护模式下强制关闭）
+                          </div>
+                      </div>
+                      <label class="switch ">
+                          <input type="hidden"  name="cdkey_use_switch" value="0">
+                          <input type="checkbox" name="cdkey_use_switch" type="checkbox"  value="1"  <?php if(advert('330') ==1){echo 'checked';} ?>>
+                          <div class="slider"></div>
+                      </label>
+                  </div>
+
+
+
+
+              </div>
+          
+
+          
+          
+           <br><br>         
+           
+             </fieldset>           
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary " type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>

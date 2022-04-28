@@ -1,0 +1,212 @@
+<div class="content-i">
+    <div class="content-box">
+        <div class="support-index show-ticket-content">
+
+            <div class="support-ticket-content-w">
+                <div class="support-ticket-content">
+                    <div class="support-ticket-content-header">
+                        <h3 class="ticket-header">
+                            帮助文档
+                        </h3>
+                        <a class="back-to-index" href="#"><i class="os-icon os-icon-arrow-left5"></i><span>Back</span></a><a class="show-ticket-info" href="#"><span>感谢名单</span><i class="os-icon os-icon-documents-03"></i></a>
+                    </div>
+                    <div class="ticket-thread">
+                        <div class="ticket-reply highlight">
+                            <div class="ticket-reply-info">
+                                <a class="author with-avatar" href="#"><img alt="" src="/public/static/v4/img/Ryan.png"><span>Ryan</span></a>
+                                <span class="info-data"><span class="label">安全防护 </span></span>
+
+                                <span class="badge badge-success">注意</span>
+                            </div>
+                            <div class="ticket-reply-content">
+                                <p>
+                                    依赖Redis,所以开启前需要确保Redis运行正常,PHP扩展已安装;
+                                </p>
+                                <p>
+                                    在安全阈值设置偏大时会给安全规则防御带来较大的空窗期,期间容易被"有心人"利用;
+                                </p>
+                                <p>
+                                    在服务器环境允许的情况下建议开启!<br>
+
+                                    如使用请将/application/config.php配置文件里 "缓存设置"中的type值修改为: Redis ;<br>
+                                    如服务器不支持Redis请将该值修改为:  File ;<br><br>
+
+                                    Redis配置一般保持默认即可,如需修改请同时修改配置文件里 "Redis 配置"中的对应值;
+                                </p>
+                            </div>
+                            <!--
+                            <div class="ticket-attachments">
+                                <a class="attachment" href="#"><i class="os-icon os-icon-ui-51"></i><span>Bug Report.xml</span></a><a class="attachment" href="#"><i class="os-icon os-icon-documents-07"></i><span>Sytem Information.txt</span></a>
+                            </div> -->
+                        </div>
+
+                        <div class="ticket-reply highlight">
+                            <div class="ticket-reply-info">
+                                <a class="author with-avatar" href="#"><img alt="" src="/public/static/v4/img/Ryan.png"><span>Ryan</span></a>
+                                <span class="info-data"><span class="label">离线模式 </span></span>
+
+                            </div>
+                            <div class="ticket-reply-content">
+                                <p>
+                                    开启后打开APP时将不会与服务器进行通信验证, 打开APP一段时间后再与服务器同步数据 (如服务器异常会定时请求 直至同步成功);<br>
+                                    优点:在服务器或用户网络环境不佳时,不影响用户体验;甚至无网络环境也可以进入.( ⊙︿⊙ 虽然进入了也没吊用 )<br>
+                                    缺点:数据更新会延迟;比如后台更新的内容/修改的设置,不会及时更新到前端;也就是每次都会加载上次打开APP后同步的内容/设置;<br><br>
+                                    注意:第一次安装或更新 该设置无效,会强制与服务器验证并同步数据;
+                                </p>
+                                <br>
+                                <p>
+                                    反之每次打开APP都会与服务器通信,如果验证不通过或数据请求失败则不允许进入;<br>
+                                    优点:数据更新及时;<br>
+                                    缺点:当服务器或用户网络环境不佳时可能会无法进入APP; 验证失败的情况下会以10秒为频率循环请求 ,直至成功或退出APP;<br>
+                                </p>
+                                <p>
+                                    在对数据更新要求不严格的情况下 或 准备更新前夕建议开启!
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="ticket-reply highlight">
+                            <div class="ticket-reply-info">
+                                <a class="author with-avatar" href="#"><img alt="" src="/public/static/v4/img/Ryan.png"><span>Ryan</span></a>
+                                <span class="info-data"><span class="label">维护模式 </span></span>
+
+                            </div>
+                            <div class="ticket-reply-content">
+                                <p>
+                                    服务器日常维护或服务器无法满足当前需求需要"搬家"时,可以开启维护模式;<br>
+                                    开启维护模式,所有写入操作将被禁止;
+                                </p>
+                                <br>
+                                <p>
+                                    场景: 小霸王已经抗不住用户造的时候,需要去搬家到更好的"House";这时我们可以开启维护模式,将数据/程序部署到新服务器后,将域名解析到新服务器;解析生效后用户会去大"House"里折腾,
+                                    然后关闭小霸王,在新服务器关闭维护模式;
+                                    <br><br>
+                                    相比一般停机维护/搬家,这样维护或迁移数据时不影响用户一般使用需求,甚至绝大部分用户都察觉不到你已经偷偷搞了个大事情;<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ticket-reply ">
+                            <div class="ticket-reply-info">
+                                <a class="author with-avatar" href="#"><img alt="" src="/public/static/v4/img/Ryan.png"><span>Ryan</span></a>
+
+                                <span class="info-data">
+                                    <span class="label">SM.MS图库 API Access </span>
+                                </span>
+
+
+                            </div>
+                            <div class="ticket-reply-content">
+                                <p>
+                                    用户上传的图片全部存储在图库,不再存储在本地服务器;
+                                </p>
+                                <p>
+                                    存储在本地服务器缺点: 1.占用服务器空间;2.消耗服务器大量带宽资源;3.偶尔还有安全问题;
+                                </p>
+                                <br>
+                                <p>
+                                    目前使用图库SM.MS , 由于图库接口经过了2次升级,非注册用户请求频率限制较高,不能像以前一样随意上传了,
+                                    所以需要自己去申请下权限将API Access填入即可;当然注册了也并非万事大吉,每个账户存储空间是有限制的(毕竟存储/带宽等费用不是一笔小数目,别人也要生活),
+                                    富于的同学可以使用付费服务,暂时困难可以隔断时间换一个账户即可~
+                                </p>
+                            </div>
+                            <div class="ticket-attachments">
+                                <a class="attachment" href="https://sm.ms/register" target="_blank" ><i class="os-icon os-icon-ui-51"></i><span>去申请 SM.MS</span></a></a>
+                            </div>
+
+                        </div>
+
+                        <div class="ticket-reply ">
+                            <div class="ticket-reply-info">
+                                <a class="author with-avatar" href="#"><img alt="" src="/public/static/v4/img/Ryan.png"><span>Ryan</span></a>
+
+                                <span class="info-data">
+                                    <span class="label">代理 会员类型设置权限</span>
+                                </span>
+
+
+                            </div>
+                            <div class="ticket-reply-content">
+                                <p>
+                                     当前已有类型: "体验(时间自定义)"  "一月"  "半年"  "一年"  "永久"  "代理(代理非管理员无权限)".
+                                </p>
+                                <br>
+                                <p>
+                                    例: 如果管理员在"基础设置 - 价格 / 发卡设置"只设置了 "体验"  "一月"  "一年" ; 并开启了 [代理 会员类型设置权限];
+                                </p>
+                                <p>
+                                    那代理则只允许设置管理员已经设置过的会员类型 "体验"  "一月"  "一年" ;APP也只显示已经设置过的类型; 反之无论管理员是否设置代理亦可设置所有类型;
+                                </p>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="ticket-reply highlight">
+                            <div class="ticket-reply-content">
+                                <p>
+                                    更多信息根据反馈再整理,时间匆忙 没仔细校对,有错别字啥的请无视跳过 ゃōゃ ~ ( 意见/建议欢迎沟通 右侧有联系方式 )
+                                </p>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="support-ticket-info">
+                    <a class="close-ticket-info" href="#"><i class="os-icon os-icon-ui-23"></i></a>
+                    <div class="customer">
+                        <div class="avatar">
+                            <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+
+                        <div class="customer-tickets">
+                            Ryan
+                        </div>
+                    </div>
+                    <div class="info-section text-center">
+                        <div class="label">
+                            忍一时风平浪静 <br> 退一步海阔天空
+                        </div>
+
+                        <div class="value" >
+                            <div class="badge badge-primary">
+                                live:.cid.7abf0672944a348d
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="info-header">
+                           贡献名单
+                    </h5>
+
+                    <div class="info-section">
+                        <ul class="users-list as-tiles">
+                            <li>
+                                <a class="author with-avatar" href="#">
+                                    <div class="avatar" style="background-image: url('https://i.loli.net/2020/03/12/5uxFYlqeAdtvaoN.jpg')"></div>
+                                    <span>H</span></a>
+                            </li>
+                            <li>
+                                <a class="author with-avatar" href="#">
+                                    <div class="avatar" style="background-image: url('https://i.loli.net/2020/03/12/pDOEkrZYlA7RB64.jpg')"></div>
+                                    <span>社会主义战士</span></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,382 @@
+
+
+<div class="row content-box">
+
+          <?php if($maintenance_mode == 1){ ?>
+                <div class="col-lg-12 col-xxl-12">
+                  <!--START - maintenance_mode-->
+                  <div class="alert alert-warning borderless">
+                    <p>
+                      当前系统处于维护模式！ 用户暂时无法进行 注册/提取激活码/使用激活码/签到 等写入/变更数据操作…… 如已确定维护完毕可以点击关闭！
+                    </p>
+                    <div class="alert-btn">
+                      <a class="btn btn-white-gold" href="<?php echo url('index/advanced_functions'); ?>"><i class="os-icon os-icon-ui-92"></i><span>关闭维护模式</span></a>
+                    </div>
+                  </div>
+                  <!--END - maintenance_mode-->
+                </div>
+
+  <?php  } ?>
+
+
+
+                <div class="col-6 col-sm-3 col-xxl-2">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="<?php echo url('user/user_list'); ?>">
+                    <div class="label" style=" margin-top: 10px; ">
+                      用户数量
+                    </div>
+                    <div class="value">
+                     {$users_count}
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-sm-3 col-xxl-2">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="<?php echo url('user/agent_list'); ?>">
+                    <div class="label" style=" margin-top: 10px; ">
+                      代理数量
+                    </div>
+                    <div class="value text-danger">
+                     {$agent_count}
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-sm-3 col-xxl-2">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      付费用户
+                    </div>
+                    <div class="value">
+                     {$paying_users_count}
+                    </div>
+                    <div class="trending trending-up">
+                      <span>用户比例：{$paying_users_ratio} %</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      VIP用户
+                    </div>
+                    <div class="value">
+                     {$vip_users_count}
+                    </div>
+                      <div class="trending trending-down">
+                          <span>永久：{$permanent_vip_users_count} 个</span>
+                      </div>
+                  </a>
+                </div>
+            
+                <div class="col-6 col-sm-3 col-xxl-2">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      普通用户
+                    </div>
+                    <div class="value">
+                     {$free_users_count}
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      今日登陆用户
+                    </div>
+                    <div class="value">
+                     {$login_count}
+                    </div>
+                    <div class="trending trending-up">
+                      <span>用户比例：{$login_ratio} %</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      30天活跃用户
+                    </div>
+                    <div class="value">
+                     {$thirty_day_count}
+                    </div>
+                    <div class="trending trending-up">
+                      <span>用户比例：{$thirty_day_ratio} %</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="<?php echo url('cdkey/index'); ?>">
+                    <div class="label" style=" margin-top: 10px; ">
+                      激活码总数
+                    </div>
+                    <div class="value">
+                     {$all_Activation_code}
+                    </div>
+                    <div class="trending trending-down">
+                      <span>使用率：{$cdkey_usage_ratio} %</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="<?php echo url('cdkey/usage_log'); ?>">
+                    <div class="label" style=" margin-top: 10px; ">
+                      已使用
+                    </div>
+                    <div class="value">
+                     {$yy_Activation_code}
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="<?php echo url('cdkey/index'); ?>">
+                    <div class="label" style=" margin-top: 10px; ">
+                      未使用
+                    </div>
+                    <div class="value">
+                     {$wy_Activation_code}
+                    </div>
+                  </a>
+                </div>
+            
+                 <div class="col-6 col-xxl-2 d-sm-none d-xxl-block">
+                  <a class="element-box el-tablo centered trend-in-corner smaller" href="#">
+                    <div class="label" style=" margin-top: 10px; ">
+                      服务器空间剩余
+                    </div>
+                    <div class="value">
+                     {$disk_free_space}
+                    </div>
+                    <div class="trending trending-down">
+                      <span>剩余：{$disk} %</span>
+                    </div>
+                  </a>
+                </div>
+            
+            
+              </div>
+          
+          
+          
+          
+          
+          
+          
+          <div class="content-i">
+            
+            <div class="content-box" style=" padding-top: 0px; ">
+              
+
+                  
+				<div class="row">
+                    <div class="col-12 col-xxl-12">
+                      <div class="element-wrapper compact pt-4">
+                        <h6 class="element-header">
+                          待办事项
+                        </h6>
+                        <div class="element-box-tp">
+                          <div class="post-box">
+                            <div class="post-media" style="background-image: url(/public/static/v4/img/portfolio1.jpg)"></div>
+                            <div class="post-content">
+                              <h6 class="post-title">
+                                提现申请
+                              </h6>
+                              <div class="post-foot">
+                                <div class="post-tags">
+                                  <div class="badge badge-primary">
+                                    {$cash_conut}
+                                  </div>
+                                </div>
+                                <a class="post-link" href="<?php echo url('rebate/index'); ?>"><span>立即处理</span><i class="os-icon os-icon-arrow-right7"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="post-box">
+                            <div class="post-media" style="background-image: url(/public/static/v4/img/portfolio2.jpg)"></div>
+                            <div class="post-content">
+                              <h6 class="post-title">
+                                广告审核
+                              </h6>
+                              <div class="post-foot">
+                                <div class="post-tags">
+                                  <div class="badge badge-primary">
+                                    {$advertisement_audit}
+                                  </div>
+                                </div>
+                                <a class="post-link" href="<?php echo url('advertisement/check'); ?>"><span>立即处理</span><i class="os-icon os-icon-arrow-right7"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <!--  <div class="col-12 d-sm-none d-xxl-block col-xxl-4">
+                      <div class="cta-w orange text-center">
+                        <div class="cta-content extra-padded">
+                          <div class="highlight-header">
+                            Bonus
+                          </div>
+                          <h5 class="cta-header">
+                            Invite your friends and make money with referrals
+                          </h5>
+                          <form action="">
+                            <div class="newsletter-field-w">
+                              <input placeholder="Email address..." type="text"><button class="btn btn-sm btn-primary">Send</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  -->
+                  </div>
+                </div>
+
+                
+                
+                <div class="col-sm-6 d-none d-lg-block">
+                  <div class="cta-w cta-with-media purple">
+                    <div class="cta-content" style="padding: 2%;">
+                      <div class="highlight-header">
+                        {$app_name}
+                      </div>
+              
+              
+
+              
+                      <?php if(strlen($appId)!= 12){  ?>
+                        <a href="appId" ><div class="btn btn-danger btn-sm" style="float:right " > 请输入 APPID  </div></a>
+                      <?php   }else{   ?>
+							<?php if($authorization_tips == 0){   ?>
+                          		<a href="appKey" ><div class="btn btn-success btn-sm" style="float:right ">  APPID: {$appId} - 已授权</div></a>
+                         <?php   }else{   ?>
+                         
+                                <a href="UpdateLocalData" ><div class="btn btn-secondary btn-sm "  ><svg t="1583237429828" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3242" width="10" height="10"><path d="M610.798167 58.296731L278.95634 492.243027h306.315454L278.95634 951.714673l536.051788-510.524392-331.841827-25.526373z" fill="#ffffff" p-id="3243"></path></svg></path></svg> 清理 </div></a>     
+                         
+                         
+                          		<div class="btn btn-success btn-sm" style="float:right "><svg t="1573998848993" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3179" width="10" height="10"><path d="M352.4 801.6c-16.5 0-29.5-13.4-29.5-29.5v-44.5c0-16.5 13.4-29.5 29.5-29.5 16 0 29.5 13.4 29.5 29.5v44.5c0 16.1-13 29.5-29.5 29.5z m0 0M669.9 801.6c-16.5 0-29.5-13.4-29.5-29.5v-44.5c0-16.5 13.4-29.5 29.5-29.5 16 0 29.5 13.4 29.5 29.5v44.5c-0.1 16.1-13 29.5-29.5 29.5z m0 0" fill="#ffffff" p-id="3180"></path><path d="M511.4 959.6c-60.3 0-118.8-11.8-174-35.1-53.2-22.5-101-54.7-142-95.8-41-41-73.2-88.8-95.8-142-23.3-55.2-35.1-113.7-35.1-174s11.8-118.8 35.1-173.9c22.5-53.2 54.7-101 95.8-142s88.8-73.2 142-95.8c55.1-23.3 113.6-35.1 174-35.1S630.2 77.7 685.3 101c53.2 22.5 101 54.7 142 95.8 41 41 73.2 88.8 95.8 142 23.3 55.1 35.1 113.6 35.1 173.9s-11.8 118.8-35.1 173.9c-22.5 53.2-54.7 101-95.8 142-41 41-88.8 73.2-142 95.8-55.1 23.3-113.6 35.2-173.9 35.2z m0-837c-215.1 0-390.1 175-390.1 390.1 0 215.1 175 390.1 390.1 390.1s390.1-175 390.1-390.1c-0.1-215.1-175-390.1-390.1-390.1z" fill="#ffffff" p-id="3181"></path><path d="M731.4 490.3l26.4-81.2c4.7-14-1.6-29-14.5-35.7l-76-38.8-38.8-76c-6.7-12.9-21.7-19.1-35.7-14.5l-81.2 26.4-81.2-26.4c-14-4.7-29 1.6-35.7 14.5l-39.3 75.5-76 38.8c-12.9 6.7-19.1 21.7-14.5 35.7l26.4 81.2L265 571c-4.7 14 1.5 29 14.5 35.7l76 38.8 38.8 76C401 734.4 416 740.6 430 736l81.2-26.4 81.2 26.4c3.1 1 6.2 1.5 9.3 1.5 10.9 0 21.2-5.7 26.9-15.5l38.8-76 76-38.8c12.9-6.7 19.1-21.7 14.5-35.7l-26.5-81.2z m-101.8-36.7L505 578.2c-0.2 0.2-0.3 0.4-0.5 0.6l-0.1 0.1c-10.1 10.1-26.7 10.1-36.8 0l-74.5-74.5c-10.1-10.1-10.1-26.7 0-36.8l0.1-0.1c10.1-10.1 26.7-10.1 36.8 0l56 56 106.8-106.8c10.1-10.1 26.7-10.1 36.8 0l0.1 0.1c10.1 10.1 10.1 26.7-0.1 36.8z" fill="#ffffff" p-id="3182"></path><path d="M679.4 490.3l20.1-62c3.6-10.7-1.2-22.1-11.1-27.2l-58-29.6-29.6-58c-5.1-9.9-16.6-14.6-27.2-11.1l-62 20.1-62-20.1c-10.7-3.6-22.1 1.2-27.2 11.1l-30 57.6-58 29.6c-9.9 5.1-14.6 16.6-11.1 27.2l20.1 62-20.1 62c-3.6 10.7 1.2 22.1 11.1 27.2l58 29.6 29.6 58c5.1 9.9 16.6 14.6 27.2 11.1l62-20.1 62 20.1c2.4 0.8 4.7 1.2 7.1 1.2 8.3 0 16.2-4.3 20.5-11.8l29.6-58 58-29.6c9.9-5.1 14.6-16.6 11.1-27.2l-20.1-62.1z m-49.8-36.7L505 578.2c-0.2 0.2-0.3 0.4-0.5 0.6l-0.1 0.1c-10.1 10.1-26.7 10.1-36.8 0l-74.5-74.5c-10.1-10.1-10.1-26.7 0-36.8l0.1-0.1c10.1-10.1 26.7-10.1 36.8 0l56 56 106.8-106.8c10.1-10.1 26.7-10.1 36.8 0l0.1 0.1c10.1 10.1 10.1 26.7-0.1 36.8z" fill="#ffffff" p-id="3183"></path></svg>  APPID: {$appId} -  已授权</div>
+                         <?php   }   ?>
+
+                     <?php   }   ?>
+                
+                     <br>
+                      <br>
+                      <span>Version：{:Version()}</span>
+                      <br>
+                      <span>ServerSoftware：{$SERVER_SOFTWARE}</span>
+                      <br>
+                      <span>System：{$PHP_OS}</span>
+                      <br>
+                      <span>DomainName：{$SERVER_NAME}</span>
+                      <br>
+                      <br>
+                      <span>ServerIP：45.121.106.65</span>
+                      <br>
+                      <span>PHP Version：{$PHP_VERSION}</span>
+                      <br>
+                      <span>DocumentRoot：{$DOCUMENT_ROOT}</span>
+                      <br>
+                      <span>HttpUserAgent：{$HTTP_USER_AGENT}</span>
+                      <br>
+                      <span>ServerProtocol：{$SERVER_PROTOCOL}</span>
+                      <br>
+                      <span>MaxExecutionTime：{$max_execution_time}</span>
+                      <br>
+                      <span>ServerTime：{$datetime}</span>
+
+                 	 </div>
+                    <div class="cta-media">
+                      <img alt="" src="/public/static/v4/img/phone1.png">
+                    </div>
+                  </div>
+                </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              </div>
+          
+          
+          
+          
+          
+
+              <div class="row content-box" >
+                <div class="col-sm-8">
+                  <div class="element-wrapper compact pt-4">
+                    <div class="element-actions d-none d-sm-block">
+                      <a class="btn btn-primary btn-sm" href="<?php echo url('user/user_list'); ?>"><i class="os-icon os-icon-user-male-circle2"></i><span>用户列表</span></a>
+                      <a class="btn btn-success btn-sm" href="<?php echo url('user/agent_list'); ?>"><i class="os-icon os-icon-crown"></i><span>代理列表</span></a>
+                    </div>
+                    <h6 class="element-header">
+                      最新用户
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="inline-profile-tiles">
+                        <div class="row">
+      					 {volist name="user_list" id="vo"}
+                          <div class="col-6 col-sm-3 col-xxl-2">
+                            <div class="profile-tile profile-tile-inlined">
+                              <a class="profile-tile-box" href="<?php echo url('user/edit'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank">
+                                <div class="pt-avatar-w">
+                                  <img alt="" src="/public/static/v4/img/Ryan.png">
+                                </div>
+                                <div class="pt-user-name">
+                              <span style=" font-size: 0.7rem; color: rgb(4, 123, 248); ">  <?php   echo  substr_replace($vo['username'],'****',3,4); ?></span> <br/> <span style=" font-size: 0.7rem; color: rgba(90, 99, 126, 0.49); "><?php   echo  date('m-d H:i:s',$vo['ctime']); ?></span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                         {/volist} 
+                       
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+ 
+                </div>
+                <div class="col-sm-4">
+                  <div class="element-wrapper compact pt-4">
+    
+                    <h6 class="element-header">
+                      最近使用激活码
+                    </h6>
+                    <div class="element-box-tp">
+                      <table class="table table-clean">
+                        {volist name="cdkey_list" id="cdkey"}
+                        <tr  onclick="window.open('<?php echo url('cdkey/search'); ?>?cdkey={$cdkey['cdkey']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                          <td>
+                            <div class="value">
+                             <?php echo $cdkey['cdkey']; ?>
+                            </div>
+                            <span class="sub-value"><?php echo $cdkey['name']; ?></span>
+                          </td>
+                          <td class="text-right">
+                            <div class="value">
+                            使用ID: <?php echo $cdkey['yid']; ?>
+                            </div>
+                            <span class="sub-value"><?php echo  date('Y-m-d H:i:s',$cdkey['stime']); ?></span>
+                          </td>
+                        </tr>
+                        {/volist}
+                        
+   
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+

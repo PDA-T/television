@@ -1,0 +1,52 @@
+<div class="lime-container">
+    <div class="lime-body">
+        <div class="container">
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-xl">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">激活码提取记录</h5>
+                            <p>为了您的数据安全，我们将只保留您最后 <code> 50 </code> 次 提取记录， <code> 请提取后自己妥善保存！</code>.</p>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">类型</th>
+                                        <th scope="col">数量</th>
+                                        <th scope="col">费用</th>
+                                        <th scope="col">时间</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="cdkey_log_list" id="cdkey_log_list"}
+                                    <tr>
+                                        <th scope="row">{$cdkey_log_list['id']}</th>
+                                        <td>{$cdkey_log_list['name']}</td>
+                                        <td>{$cdkey_log_list['number']}</td>
+                                        <td>¥ {$cdkey_log_list['money']}</td>
+                                        <td><?php echo  date('Y-m-d H:i:s',$cdkey_log_list['time']); ?></td>
+                                        <td><span style='cursor: pointer' class="badge badge-primary"  onclick="window.open('/partner/cdkey/list_details?k={$cdkey_log_list['id']}&i={$cdkey_log_list['uid']}&t={$Ryan_time}&r={$Ryan_key}')">详情</span></td>
+                                    </tr>
+                                    {/volist}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

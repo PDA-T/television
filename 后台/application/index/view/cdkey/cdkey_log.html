@@ -1,0 +1,80 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      激活码生成记录 <br> <span style=" font-size: 0.72rem; ">请于 <code>5分钟</code> 内操作完毕 <code>5分钟后</code> 本次会话将超时 从打开页面开始计算:</span>
+                    </h6>
+
+                    
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>
+                                类型
+                              </th>
+                              <th>
+                                数量
+                              </th>
+                              <th>
+                                概况
+                              </th>
+                              <th>
+                                时间
+                              </th>
+                              <th>
+                                金额
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            
+                           {volist name="cdkey_log_list" id="vo"}  
+                            
+                            <tr onclick="window.open('cdkey_details?k={$vo['id']}&i={$vo['uid']}&t={$Ryan_time}&r={$Ryan_key}')" style="cursor:pointer">
+                              <td class="text-center">
+                                <span class="smaller lighter"> {$vo['id']}</span>
+                               
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                  {$vo['name']}
+                                </div>
+                              </td>
+                              <td>
+                                <span>{$vo['number']}</span>
+                              </td>
+                              <td>
+                                <div class="smaller lighter">
+                                  已使用：{$vo['invalid']}  占比：<?php echo  number_format(($vo['invalid']/$vo['number'])*100, 2, '.', ''); ?> %
+                                </div>
+                              </td>
+                              <td>
+                                <span class="smaller lighter"><?php echo  date('Y-m-d H:i:s',$vo['time']); ?></span>
+                              </td>
+                              <td class="nowrap">
+                                <a class="badge badge-primary-inverted" href=""> {$vo['money']}</a>
+                              </td>
+
+                            </tr>
+                            
+							{/volist} 
+                            
+                          </tbody>
+                        </table> 
+                        {$cdkey_log_list->render()}
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+            </div>
+          </div>

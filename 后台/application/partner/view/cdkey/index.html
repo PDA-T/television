@@ -1,0 +1,84 @@
+
+
+<div class="lime-container">
+    <div class="lime-body">
+<div class="container">
+
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="invoice-header">
+                                                <h5>激活码提取</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="invoice-header">
+                                                <h6 class="float-right">可用余额： ¥ {:user_money()}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+				
+									<div class="row">
+				                        <div class="col-xl">
+				                            <div class="card">
+				                                <div class="card-body">
+				                                    <h5 class="card-title">当前提卡单价：</h5>
+				                                    <p>
+				                                    	体验： <code>¥{:advert('1000')}</code> <br>
+				                                    	一月： <code>¥{:advert('1001')}</code> <br>
+				                                    	半年： <code>¥{:advert('1002')}</code> <br>
+				                                    	一年： <code>¥{:advert('1003')}</code> <br>
+				                                    	永久： <code>¥{:advert('1004')}</code> <br><br>
+				                                    </p>
+				                                    <form  role="form" id="form1" method="post" action="{:url('partner/cdkey/index')}"  onsubmit="return dosubmit()">
+				                                        <div class="form-group">
+				                                            <label >提取数量</label>
+				                                            <input type="number" class="form-control"  name="cdkey_num" aria-describedby="emailHelp" placeholder="单次最多可以提取{:advert('352')}个">
+				                                        </div>
+				                                        <div class="form-group">
+				                                            <label >可用激活码类型</label>
+				                                            <select class="custom-select form-control" name="cdkey_type">
+						                                        <option value="0" selected="">选择激活码类型</option>
+												                  {volist name="cdkey_type_list" id="cdkey_type_list"}	
+												                  <option value="{$cdkey_type_list['type']}">{$cdkey_type_list['name']} - 官方指导价: {$cdkey_type_list['cost_price']}</option>
+								                                    {/volist}
+						                                    </select>
+				                                        </div>
+				                                        
+				                                        
+
+				                                        
+				                                        
+														<input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" >
+														<input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+														<input type="hidden" name="token"  id="token"   value="{$token}" >
+				                                        <button class="btn btn-primary" type="submit"  id="submit">确定</button>
+				                                    </form>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-8 m-t-xxl">
+                                            <div class="invoice-info">
+                                                <span class="bold m-b-md d-block">友情提示:</span>
+                                                <p>如列表中无激活码,可能是数据延迟,请稍后在查看.</p>
+                                                <p>请合理使用激活码,如影响系统正常运行可能会对您账户一定限制.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+

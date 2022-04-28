@@ -1,0 +1,294 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile compact">
+      <div class="up-head-w" style="background-image:url(/public/static/v4/img/cdkey_bg.png)">
+        <div class="up-social">
+         <a href="#"><i class="os-icon os-icon-crown"></i></a>
+        </div>
+        <div class="up-main-info">
+          <h2 class="up-header">
+            {$cdkey}
+          </h2>
+          <h6 class="up-sub-header">
+            激 活 码 状 态
+          </h6>
+        </div>
+        <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
+      </div>
+      <div class="up-controls">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="value-pair">
+              <div class="label">
+                Status:
+              </div>
+              <?php  if($cdkey_data_is == 1){  ?>
+              
+                  <?php  if($cdkey_data['y'] == 1){  ?>
+                  		<div class="value badge badge-pill badge-danger">已使用</div>
+                  <?php  }else if($cdkey_data['y'] == 0){ ?>
+                  		<div class="value badge badge-pill badge-primary">未使用</div>
+                  <?php  } ?>
+              
+               <?php }else{  ?>
+                  <div class="value badge badge-pill badge-secondary"> - - - </div>
+               <?php  } ?>
+              
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            <span class="btn btn-primary btn-sm" ><i class="os-icon os-icon-fingerprint"></i><span>{:Ryan_name()}</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="up-contents">
+        <div class="m-b">
+          <div class="row m-b">
+            <div class="col-sm-6 b-r b-b">
+              <div class="el-tablo centered padded-v">
+                <div class="value">
+                  <?php  if($cdkey_data_is == 1){  ?>
+                  		{$cdkey_data['name']}
+                      <?php }else{  ?>
+                  		 * *  
+                  <?php  } ?>
+                </div>
+                <div class="label">
+                  类型
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 b-b">
+              <div class="el-tablo centered padded-v">
+                <div class="value">
+                  <?php  if($cdkey_data_is == 1){  ?>
+                  		{$cdkey_data['log']}
+                      <?php }else{  ?>
+                  		 * *  
+                  <?php  } ?>
+                </div>
+                <div class="label">
+                  Ascription
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <?php  if($cdkey_data_is == 1){  ?>         
+              <div class="padded">
+                <div class="os-progress-bar primary">
+                  <div class="bar-labels">
+                    <div class="bar-label-left">
+                      <span>该批使用率</span><span class="positive" style="color: #e65252;"><?php echo  number_format(($cdkey_log_data['invalid']/$cdkey_log_data['number'])*100, 2, '.', ''); ?> %</span>
+                    </div>
+                    <div class="bar-label-right">
+                      <span class="info">{$cdkey_log_data['invalid']} / {$cdkey_log_data['number']}</span>
+                    </div>
+                  </div>
+                  <div class="bar-level-1" style="width: 100%">
+                    <div class="bar-level-2" style="width: <?php echo  number_format(($cdkey_log_data['invalid']/$cdkey_log_data['number'])*100, 2, '.', ''); ?>%">
+                     <!-- <div class="bar-level-3" style="width: 30%"></div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="os-progress-bar primary">
+                  <div class="bar-labels">
+                    <div class="bar-label-left">
+                      <span>该类使用率</span><span class="positive" style="color: #e65252;"><?php echo  number_format(($cdkey_total_data_use/$cdkey_total_data)*100, 2, '.', ''); ?> %</span>
+                    </div>
+                    <div class="bar-label-right">
+                      <span class="info">{$cdkey_total_data_use} / {$cdkey_total_data}</span>
+                    </div>
+                  </div>
+                  <div class="bar-level-1" style="width: 100%">
+                    <div class="bar-level-2" style="width: <?php echo  number_format(($cdkey_total_data_use/$cdkey_total_data)*100, 2, '.', ''); ?>%">
+                     <!-- <div class="bar-level-3" style="width: 30%"></div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <?php  } ?>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col-sm-7">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('cdkey/search')}" >
+          <div class="element-info">
+            <div class="element-info-with-icon">
+              <div class="element-info-icon">
+                <div class="os-icon os-icon-fingerprint"></div>
+              </div>
+              <div class="element-info-text">
+                <h5 class="element-inner-header">
+                 激活码状态检索
+                </h5>
+                <div class="element-inner-desc">
+                 <!--PNS.-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group has-error has-danger">
+            <label for=""> CDKEY </label><input class="form-control"  placeholder="Enter CDKEY" required="required" type="text" name="cdkey" value="{$cdkey_data['cdkey']}">
+          </div>
+          
+          
+          
+          
+          
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 查 询 状 态</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <!--------------------
+              START - Support Agents
+              -------------------->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  激活码关联
+                </h6>
+                <div class="element-box-tp">
+                  <div class="profile-tile">
+                    <a class="profile-tile-box" href="#">
+                      <div class="pt-avatar-w">
+                        <img alt="" src="/public/static/v4/img/Ryan.png">
+                      </div>
+                      <div class="pt-user-name">
+                         <?php  if($cdkey_data_is == 1){ echo $give_data['username'];  }else{  echo '无'; } ?>
+                      </div>
+                    </a>
+                    <div class="profile-tile-meta">
+                      <ul>
+                        <li>
+                          用户 I D:<strong><?php  if($cdkey_data_is == 1){ echo $give_data['id'];  }else{  echo '- - -'; } ?></strong>
+                        </li>
+                        <li>
+                          生成时间:
+                        </li>
+                        <li>
+                          <strong> <?php  if($cdkey_data_is == 1){ echo date('Y-m-d H:i:s',$cdkey_data['ctime']);  }else{  echo '---- -- -- --：--：--'; } ?></strong>
+                        </li>
+                      </ul>
+                      <div class="pt-btn">
+                        <a class="btn btn-primary btn-sm" href="<?php echo url('user/edit'); ?>?edit_id={$give_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank">   <i class="os-icon os-icon-pencil-1"></i> 所 属 人 </a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-tile">
+                    <a class="profile-tile-box" href="#">
+                      <div class="pt-avatar-w">
+                        <img alt="" src="/public/static/v4/img/Ryan.png">
+                      </div>
+                      <div class="pt-user-name">
+
+                        <?php  if($cdkey_data['y'] == 1){ echo $use_data['username'];  }else{  echo '无'; } ?>
+                        
+                        
+                      </div>
+                    </a>
+                    <div class="profile-tile-meta">
+                      <ul>
+                        <li>
+                           用户 I D:<strong><?php  if($cdkey_data['y'] == 1){ echo $use_data['id'];  }else{  echo '- - -'; } ?></strong>
+                        </li>
+                        <li>
+                           使用时间:
+                        </li>
+                        <li>
+                         <strong> <?php  if($cdkey_data['y'] == 1){ echo date('Y-m-d H:i:s',$cdkey_data['stime']);  }else{  echo '---- -- -- --：--：--'; } ?></strong>
+                        </li>
+                      </ul>
+                      <div class="pt-btn">
+                        <a class="btn btn-secondary btn-sm" href="<?php echo url('user/edit'); ?>?edit_id={$use_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank">   <i class="os-icon os-icon-pencil-1"></i> 使 用 人 </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--------------------
+              END - Support Agents
+              -------------------->
+              
+            </div>
+            <!--------------------
+            END - Sidebar
+            -------------------->
+          </div>
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ 	<button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

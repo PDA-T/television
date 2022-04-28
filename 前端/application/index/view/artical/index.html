@@ -1,0 +1,103 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      公告列表
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th class="text-center">
+                                Title
+                              </th>
+                              <th>
+                               Content
+                              </th>
+                              <th>
+                               Time
+                              </th>
+                              <th>
+                                Type
+                              </th>
+                              <th>
+                                Actions
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="artical_list" id="vo"}   
+                            
+                            <tr>
+                              <td class="text-center">
+                                {$vo['id']} 			
+                                
+                                <?php if($vo['eject'] == 1){  ?>
+                               <div class="value badge badge-pill badge-primary">弹窗</div>
+                                <?php } ?>
+                                
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                 <span>{$vo['title']}</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="smaller lighter" style=" overflow: hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp: 1; ">
+                                  {$vo['content']}
+                                </div>
+                              </td>
+                              <td>
+                         			
+                                <span class="badge badge-white-inverted" href=""><?php echo  date('Y年m月d日',$vo['time']); ?></span>
+                              </td>
+                              <td class="text-center">
+                                
+                                <?php if($vo['type'] == 0){  ?>
+                                <span class="badge badge-light-inverted" href="">公告</span>
+                                <?php }else if($vo['type'] == 1){  ?>
+                                <span class="badge badge-dark-inverted" href="">电影推荐</span>
+                                <?php } ?>
+
+                              </td>
+                              <td class="row-actions">
+                                <a href="<?php echo url('artical/edit'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-pencil-1"></i></a>
+                            <!--    <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
+                              </td>
+                            </tr>
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$artical_list->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              <div class="floated-chat-btn"  onclick="window.open('<?php echo url('artical/add'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+
+                <span><i class="os-icon os-icon-pencil-1"></i><span>添加公告</span></span>
+
+              </div>
+              
+              
+            </div>
+          </div>

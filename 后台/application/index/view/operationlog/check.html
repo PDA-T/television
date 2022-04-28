@@ -1,0 +1,37 @@
+<div class="content-i">
+            <div class="content-box">
+              <div class="big-error-w">
+                <img src="/public/static/v4/img/jjs.png">
+
+              </div>
+              
+                            
+
+             <?php if($debug_yz != '1') { ?>
+             <div class="floated-chat-btn">
+                <i class="os-icon os-icon-fingerprint"></i><span>调试</span>
+              </div>
+             
+             <div class="floated-chat-w ">
+				<div class="floated-chat-i">
+                  <div class="chat-close">
+                    <i class="os-icon os-icon-close"></i>
+                  </div>
+                  
+                  <div class="chat-controls">
+                    <form class="form-material"   role="form" id="form1" method="post" action="{:url('operationlog/debug_key')}" >
+                      <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+                      <input type="hidden" name="type"  id="type"   value="operationlog" >
+                    <input class="message-input" placeholder="Enter Debug Key..." type="text" name="debug_key">
+                    <div class="chat-extra">
+                      <button class="btn btn-primary " type="submit"> <i class="os-icon os-icon-text-input"></i>  确认</button><span id="timer" style=" margin-right: 10px; color: #999; font-size: 10px; "></span>  <span style="color: #e91e63;">此操作可能导致系统异常</span>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+ 		<?php } ?>
+ 		
+           
+            </div>
+          </div>

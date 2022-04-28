@@ -1,0 +1,274 @@
+<div class="content-i">
+            <div class="content-box">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="element-wrapper">
+
+                    <h6 class="element-header">
+                      推荐页轮播广告概况 {$type_name}
+                    </h6>
+                    <div class="element-content">
+                      <div class="row">
+                        <div class="col-sm-4 col-xxxl-3">
+                          <a class="element-box el-tablo" href="<?php echo url('advertisement/banner_recommend'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}">
+                            <div class="label">
+                              ALL
+                            </div>
+                            <div class="value">
+                              {$banner_recommend_count}
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-sm-4 col-xxxl-3">
+                          <a class="element-box el-tablo" href="<?php echo url('advertisement/banner_recommend'); ?>?type=1&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}">
+                            <div class="label">
+                              审核通过
+                            </div>
+                            <div class="value">
+                              {$banner_recommend_ok_count}
+                            </div>
+                            <div class="trending trending-up-basic">
+                              <span>{$banner_recommend_ok_count_proportion} %</span><i class="os-icon os-icon-ui-02"></i>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-sm-4 col-xxxl-3">
+                          <a class="element-box el-tablo" href="<?php echo url('advertisement/banner_recommend'); ?>?type=2&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}">
+                            <div class="label">
+                              待审核
+                            </div>
+                            <div class="value">
+                             {$banner_recommend_wait_count}
+                            </div>
+                            <div class="trending trending-down-basic">
+                             <span>{$banner_recommend_wait_count_proportion} %</span><i class="os-icon os-icon-grid-18"></i>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="d-none d-xxxl-block col-xxxl-3">
+                          <a class="element-box el-tablo" href="<?php echo url('advertisement/banner_recommend'); ?>?type=3&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}">
+                            <div class="label">
+                              驳回
+                            </div>
+                            <div class="value">
+                              {$banner_recommend_no_count}
+                            </div>
+                            <div class="trending trending-down-basic">
+                              <span>{$banner_recommend_no_count_proportion} %</span><i class="os-icon os-icon-others-43"></i>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="row">
+                
+                <div class="col-sm-8 col-xxxl-12">
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      首页轮播广告列表 {$type_name}
+                    </h6>
+                    <div class="element-box">
+                      <div class="table-responsive">
+                        <table class="table table-lightborder">
+                          <thead>
+                            <tr>
+                              <th>
+                                标题
+                              </th>
+                              <th>
+                                缩略
+                              </th>
+                              <th class="text-center">
+                                状态
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                                                       
+                          {volist name="banner_recommend_list" id="vo"}    
+
+                            
+                           
+                            <tr  onclick="window.open(' <?php echo url('advertisement/edit'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                              <td class="nowrap">
+                                {$vo['name']}
+                              </td>
+                              <td>
+                                <div class="cell-image-list">
+                                  <div class="cell-img" style="background-image: url({$vo['picurl']})"></div>
+                                  <div class="cell-img-more" style="left: 80%;">
+                                    <?php if($vo['audit'] == 2){ echo '待审核'; }else if($vo['audit'] == 3){ echo '驳回'; } ?>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="text-center">
+                                <?php if($vo['audit'] == 1){  ?>
+                                	<div class="status-pill green" data-title="通过" data-toggle="tooltip" data-original-title="" title=""></div> 
+                                <?php }else if($vo['audit'] == 2){ ?> 
+                                	<div class="status-pill  " data-title="待审核" data-toggle="tooltip" data-original-title="" title=""></div> 
+                                <?php }else if($vo['audit'] == 3){ ?>
+                                	<div class="status-pill red" data-title="驳回" data-toggle="tooltip" data-original-title="" title=""></div> 
+                                <?php } ?>
+                              </td>
+                            </tr>
+                            
+                         {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        
+                        {$banner_recommend_list->render()}
+                                           
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  广告展示规则：
+                </h6>
+                <div class="element-box-tp">
+                  <div class="el-buttons-list full-width">
+                    <a class="btn btn-primary btn-sm" href="<?php echo url('index/advanced_functions'); ?>"  target="_blank"><i class="os-icon os-icon-window-content"></i><span>当前：<?php if(advert('130') ==1){echo '开启代理广告展示';}else if(advert('130') ==0){echo '关闭代理广告展示';} ?></span></a>
+                  </div>
+                </div>
+              </div>
+              <!--------------------
+              START - Support Agents
+              -------------------->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-box-tp">
+                {volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                {/volist} 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+
+
+
+
+              
+              
+              <div class="floated-chat-btn"  onclick="window.location.href = '<?php echo url('advertisement/add'); ?>?type={$type}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'"  style="cursor:pointer">
+
+                <span><i class="os-icon os-icon-pencil-1"></i><span>添加广告</span></span>
+
+              </div>
+              
+
+
+
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,311 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      操作记录
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>
+                                用户
+                              </th>
+                              <th>
+                                操作
+                              </th>
+
+                              <th class="row-actions">
+                                时间
+                              </th>
+                              <th>
+                                备注
+                              </th>
+                              <th>
+                                ip
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="operation_log" id="vo"}  
+                            <tr>
+                              <td class="text-center">
+                                <span class="smaller lighter">{$vo['id']}</span>
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                  <span class="smaller lighter" > {$vo['user']}</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="smaller lighter">
+                                 {$vo['type']} 
+                                </div>
+                              </td>
+
+                              <td class="row-actions">
+                                <span class="smaller lighter" > <?php echo  date('Y-m-d H:i:s',$vo['time']); ?> </span>
+                              </td>
+                              <td>
+                                <span class="smaller lighter">{$vo['remarks']}</span>
+                              </td>
+                              <td>
+                                <span class="smaller lighter">{$vo['ip']}</span>
+                              </td>
+                            </tr>
+                           
+                            
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$operation_log->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+
+
+
+              
+              <div class="floated-customizer-btn third-floated-btn">
+                  <i class="os-icon os-icon-robot-2"></i>
+                <span>Core Setup</span>
+              </div>
+              
+          <div class="floated-customizer-panel" style="right: 40px;bottom: 80px;width: 700px;">
+          	
+            <form class="form-material"   role="form" id="form1" method="post" action="{:url('operationlog/setting')}" >
+            	
+            	
+          	<div class="fcp-content">
+                
+                  <div class="close-customizer-btn">
+                    <i class="os-icon os-icon-x"></i>
+                  </div>
+                  <div class="fcp-group">
+                    <div class="fcp-group-header">
+                      Module
+                    </div>
+                    <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label  style="flex: 0 0 30%;" >Web
+                       <?php if($setting['web_key_state'] ==0){ ?>
+                        <strong class="badge badge-danger">{$setting['web_value']}</strong>
+                        <?php }else{ ?>
+                        <strong class="badge badge-success">{$setting['web_value']}</strong>
+                        <?php } ?>
+                        
+                        </label>
+                        
+                        <select  name="web_value"  value="{$setting['web_value']}">
+                          <option value="webBrowser"  <?php if($setting['web_value'] =='webBrowser'){echo 'selected';} ?> >
+                            webBrowser
+                          </option>
+                          <option value="webBrowser2018"  <?php if($setting['web_value'] =='webBrowser2018'){echo 'selected';} ?> >
+                            webBrowser2018
+                          </option>
+                        </select>
+                         <?php if($setting['web_key_state'] ==0){ ?>
+                        <span style="width: 500px;margin-left: 10px;">
+                        <input class="form-control form-control-sm rounded bright" placeholder="KEY" type="text" name="web_key_value"  value="{$setting['web_key_value']}">
+                        </span>
+                        <?php } ?>
+                      </div>
+
+                    </div>
+                    
+                     <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label  style="flex: 0 0 30%;" >Play
+                       <?php if($setting['jx_play_key_state'] ==0){ ?>
+                        <strong class="badge badge-danger">{$setting['jx_play_value']}</strong>
+                        <?php }else{ ?>
+                        <strong class="badge badge-success">{$setting['jx_play_value']}</strong>
+                        <?php } ?>
+                        
+                        </label>
+                        
+                        <select  name="jx_play_value"  value="{$setting['jx_play_value']}">
+                          <option value="x5"  <?php if($setting['jx_play_value'] =='x5'){echo 'selected';} ?> >
+                            X5
+                          </option>
+                          <option value="native"  <?php if($setting['jx_play_value'] =='native'){echo 'selected';} ?> >
+                            Native
+                          </option>
+                        </select>
+                         <?php if($setting['jx_play_key_state'] ==0){ ?>
+                        <span style="width: 500px;margin-left: 10px;">
+                        <input class="form-control form-control-sm rounded bright" placeholder="KEY" type="text" name="jx_play_key_value"  value="{$setting['jx_play_key_value']}">
+                        </span>
+                        <?php } ?>
+                      </div>
+
+                    </div>
+                    
+                    
+                  </div>
+                  <div class="fcp-group">
+                    <div class="fcp-group-header">
+                      Skin 
+                    </div>
+
+                     <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label  style="flex: 0 0 30%;" >首页
+                       <?php if($setting['index_skin_key_state'] ==0){ ?>
+                        <strong class="badge badge-danger">{$setting['index_skin_value']}</strong>
+                        <?php }else{ ?>
+                        <strong class="badge badge-success">{$setting['index_skin_value']}</strong>
+                        <?php } ?>
+                        
+                        </label>
+                        
+                        <select  name="index_skin_value"  value="{$setting['index_skin_value']}">
+                          <option value="index_a"  <?php if($setting['index_skin_value'] =='index_a'){echo 'selected';} ?> >
+                            A
+                          </option>
+                          <option value="index_x"  <?php if($setting['index_skin_value'] =='index_x'){echo 'selected';} ?> >
+                            X
+                          </option>
+                        </select>
+                         <?php if($setting['index_skin_key_state'] ==0){ ?>
+                        <span style="width: 500px;margin-left: 10px;">
+                        <input class="form-control form-control-sm rounded bright" placeholder="KEY" type="text" name="index_skin_key_value"  value="{$setting['index_skin_key_value']}">
+                        </span>
+                        <?php } ?>
+                      </div>
+
+                    </div>            
+                       
+                       
+                       
+                       
+                     <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label  style="flex: 0 0 30%;" >推荐
+                       <?php if($setting['recommend_skin_key_state'] ==0){ ?>
+                        <strong class="badge badge-danger">{$setting['recommend_skin_value']}</strong>
+                        <?php }else{ ?>
+                        <strong class="badge badge-success">{$setting['recommend_skin_value']}</strong>
+                        <?php } ?>
+                        
+                        </label>
+                        
+                        <select  name="recommend_skin_value"  value="{$setting['recommend_skin_value']}">
+                          <option value="recommend_a"  <?php if($setting['recommend_skin_value'] =='recommend_a'){echo 'selected';} ?> >
+                            A
+                          </option>
+                        </select>
+                         <?php if($setting['recommend_skin_key_state'] ==0){ ?>
+                        <span style="width: 500px;margin-left: 10px;">
+                        <input class="form-control form-control-sm rounded bright" placeholder="KEY" type="text" name="recommend_skin_key_value"  value="{$setting['recommend_skin_key_value']}">
+                        </span>
+                        <?php } ?>
+                      </div>
+
+                    </div>            
+                       
+                       
+                       
+                     <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label  style="flex: 0 0 30%;" >我的
+                       <?php if($setting['user_skin_key_state'] ==0){ ?>
+                        <strong class="badge badge-danger">{$setting['user_skin_value']}</strong>
+                        <?php }else{ ?>
+                        <strong class="badge badge-success">{$setting['user_skin_value']}</strong>
+                        <?php } ?>
+                        
+                        </label>
+                        
+                        <select  name="user_skin_value"  value="{$setting['user_skin_value']}">
+                          <option value="user_a"  <?php if($setting['user_skin_value'] =='user_a'){echo 'selected';} ?> >
+                            A
+                          </option>
+                         <option value="user_x"  <?php if($setting['user_skin_value'] =='user_x'){echo 'selected';} ?> >
+                            X
+                          </option>
+                        </select>
+                         <?php if($setting['user_skin_key_state'] ==0){ ?>
+                        <span style="width: 500px;margin-left: 10px;">
+                        <input class="form-control form-control-sm rounded bright" placeholder="KEY" type="text" name="user_skin_key_value"  value="{$setting['user_skin_key_value']}">
+                        </span>
+                        <?php } ?>
+                      </div>
+
+                    </div>            
+                       
+                       
+                       
+                       
+
+                  </div>
+                  
+                  <div class="fcp-group">
+                    <div class="fcp-group-header">
+                      Other 
+                    </div>
+                    <div class="fcp-group-contents">
+                      <div class="fcp-field">
+                        <label for="">推荐</label><select class="full-screen-selector">
+                          <option value="yes">
+                            Yes
+                          </option>
+                          <option value="no">
+                            No
+                          </option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+
+      
+      
+                </div>
+    				<br>
+                      <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+                      <input type="hidden" name="type"  id="type"   value="operationlog" >
+                    	<div class="chat-extra">
+                      <button class="btn btn-primary " type="submit"> <i class="os-icon os-icon-text-input"></i>  确认</button>
+                      <span  style=" margin-right: 10px; color: #999; font-size: 10px; "></span>  
+                      <span style="color: #e91e63;">此操作可能导致系统异常</span>
+                    </div>
+                    </form>  
+                </div>    
+              
+              
+              
+			  <div class="floated-colors-btn second-floated-btn"   onclick="window.location.href = '<?php echo url('operationlog/clear'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'"  style="cursor:pointer">
+              <i class="os-icon os-icon-database-remove"></i>  <span style="margin-left: 15px;"> Clear Log</span>
+              </div>
+              
+
+          
+              
+        	  <div class="floated-chat-btn"  onclick="window.location.href = '<?php echo url('operationlog/exit_debug'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'"  style="cursor:pointer">
+                <i class="os-icon os-icon-signs-11"></i><span>Sign Out</span>
+              </div>      
+
+              
+              
+              
+              
+              
+              
+
+            </div>
+          </div>

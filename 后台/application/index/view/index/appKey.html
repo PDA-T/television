@@ -1,0 +1,47 @@
+<div class="all-wrapper menu-side with-pattern">
+      <div class="auth-box-w wider centered">
+		<br><br>
+        <h5 class="auth-header">
+          授 权 验 证
+        </h5>
+        <div class="logged-user-w">
+
+          <div class="logged-user-role">
+            
+            	更换：服务器环境、运行环境、域名等 授权将会失效;防止泄漏滥用！ <br>
+           授权失效后 后台90%操作禁止，前端禁止登录、注册和使用激活码！<br>
+           <br>
+           
+           
+          </div>
+        </div>
+       <form class="form-material"    role="form" id="form1" method="post" action="{:url('index/appKey')}">
+          
+          <div class="form-group">
+            <input type="text" class="form-control"   value="授权ID: {:advert('47')}"  data-validate="required,minlength[4],maxlength[18]" disabled="disabled">
+            
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <div class="pre-icon os-icon os-icon-fingerprint"></div>
+          </div>
+         
+         
+          <div class="form-group">
+            <input type="text" class="form-control"   value="识别码: {:authorization()}"  disabled="disabled">
+          </div>
+         
+         
+            <div class="form-group">
+              <textarea class="form-control" rows="5"   name="appKey">{:advert('48')}</textarea>
+              <div class="help-block form-text with-errors form-control-feedback">请输入授权码</div>
+              
+            </div>
+         
+
+          <div class="buttons-w">
+            <button class="btn btn-primary">确认</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+

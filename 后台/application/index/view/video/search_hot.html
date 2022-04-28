@@ -1,0 +1,88 @@
+<div class="content-i">
+            <div class="content-box">
+              <div class="os-tabs-w">
+                <div class="os-tabs-controls os-tabs-complex">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a aria-expanded="false" class="nav-link active" data-toggle="tab"><span class="tab-label">搜索结果</span><span class="badge badge-success">{$video_hot_count}</span></a>
+                    </li>
+                    
+                    
+                    <li class="nav-item">
+              			<div class="input-search-w" style=" margin-left: 20px; ">
+                          <form class="form-material"   role="form" id="form1" method="post" action="{:url('video/search_hot')}" >
+                    		<input class="form-control rounded bright" placeholder="检索影视..." type="search" name="search_video"  value="{$search_video}">
+                            </form>
+                 	 	</div>
+                    </li>
+                    
+                    
+
+
+                    <li class="nav-item nav-actions d-none d-sm-block">
+                      <a class="btn btn-grey" href="<?php echo url('video/add_hot'); ?>"><i class="os-icon os-icon-plus-circle"></i><span>新 增</span></a>
+                    </li> 
+                  </ul>
+                </div>
+              </div>
+              
+
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="row">
+                <div class="col-sm-12">
+                <div class="element-box-tp">
+                      <div class="inline-profile-tiles">
+                        <div class="row">
+    
+                     {volist name="video_hot_list" id="vo"}                               
+                          
+                           <div class="col-12 col-sm-3 col-xxl-4">
+                          <div class="post-box">
+                            <div class="post-media" style="background-image: url({$vo['img']})"></div>
+                            <div class="post-content">
+                              <h6 class="post-title">
+                                {$vo['title']}
+                              </h6>
+                              <div class="post-text" style=" overflow: hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp: 5; ">
+                                {$vo['content']}
+                              </div>
+                              <div class="post-foot">
+                                <div class="post-tags">
+                                  <div class="badge badge-primary">
+                                     {$vo['type']}
+                                  </div>
+                                  <div class="badge badge-primary">
+                                     {$vo['region']}
+                                  </div>
+                                </div>
+                                <a class="post-link"   href="<?php echo url('video/edit_hot'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}" target="_blank" ><span>编辑</span><i class="os-icon os-icon-pencil-1"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          </div>     
+                          
+                     {/volist}                      
+        
+
+                        </div>
+                      </div>
+                    </div>  
+                   {$video_hot_list->render()}
+                </div>
+                
+              </div>
+              
+              
+              
+            </div>
+            
+            
+            
+          </div>

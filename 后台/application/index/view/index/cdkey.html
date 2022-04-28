@@ -1,0 +1,254 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('index/cdkey')}" >
+          <h5 class="form-header">
+            激活码设置
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交.
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+          
+          
+          
+
+          <!--<div class="form-group">
+            <label for=""> APP名称</label><input class="form-control" data-error="Your email address is invalid" placeholder="Enter email" required="required" type="email">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>--->
+          <div class="row">
+            
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 激活码前缀</label><input class="form-control"  placeholder="Confirm Prefix" required="required" type="text"  value="{:advert('28')}" name="kami_prefix"  >
+                 <div class="help-block form-text text-muted form-control-feedback">
+                  标识符 且用户前端激活码检测 建议2-4字符，不可为中文
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 激活码长度</label><input class="form-control"  placeholder="Confirm Num" required="required" type="number"  value="{:advert('29')}" name="kami_length" >
+                <div class="help-block form-text text-muted form-control-feedback">
+                  8-20位 不建议过低或过高
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 代理激活码单类型生成上限</label><input class="form-control"  placeholder="Confirm Num" required="required" type="number"  value="{:advert('380')}" name="Activation_code_upper_limit" > 
+                <div class="help-block form-text text-muted form-control-feedback">
+                  代理未使用激活码大于该值将禁止生成；将激活码使用过后才能继续。防止激活码滥用；
+                <br>设置为0 将无限制；
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 体验激活码时长 /分钟</label><input class="form-control"  placeholder="当前值为:{:advert('17')}"  type="number"   name="experience_cdkey_time" >
+                <div class="help-block form-text text-muted form-control-feedback">
+                  <s style="color: #f00;">仅对新生成的体验激活码有效；修改前已生成的体验激活码时间不变；</s>
+                </div>
+                <div class="help-block form-text text-muted form-control-feedback">
+                  修改该参数会调整所有体验卡的时间（包含已生成的）
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 激活码单次生成上限</label><input class="form-control"  placeholder="Confirm Num" required="required" type="number"  value="{:advert('352')}" name="SingleLaunchOfCdkey" > 
+                <div class="help-block form-text text-muted form-control-feedback">
+                  单次生成激活码最大数量（大于1000无效）；
+                <br>
+                </div>
+              </div>
+            </div>
+            
+
+
+          </div>
+
+          
+          
+          
+     
+          <fieldset class="form-group">
+            <legend><span>代理取码单价</span></legend>
+            
+		<div class="row">
+          
+			<div class="col-sm-2">
+            <label for=""> 体验 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1000')}"  name="experience_price">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+			<div class="col-sm-2">
+            <label for=""> 一月 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1001')}"  name="onemonth_price">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+			<div class="col-sm-2">
+            <label for=""> 半年 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1002')}"  name="halfayear_price">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+			<div class="col-sm-2">
+            <label for=""> 一年 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1003')}"  name="oneyear_price">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+			<div class="col-sm-2">
+            <label for=""> 永久 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1004')}"  name="permanent_price">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+          
+			<div class="col-sm-2">
+            <label for=""> 代理 </label><input class="form-control"  placeholder="Enter Price"  type="number" value="{:advert('1010')}"  name="agent_price" disabled>
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          
+
+         </div> 
+            
+
+      
+          </fieldset>     
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>

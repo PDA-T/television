@@ -1,0 +1,190 @@
+<div class="content-i">
+            <div class="content-box"><div class="element-wrapper">
+  
+  <div class="element-box">
+    <h5 class="form-header">
+     {$cdkey_type_data['name']}激活码 #{$cdkey_type_data['id']}#{$cdkey_type_data['time']}
+    </h5>
+
+    <div class="form-desc"  id="timer" >请于 <code>5分钟</code> 内操作完毕 <code>5分钟后</code> 本次会话将超时 从打开页面开始计算:
+    </div>
+    <!--------------------
+    START - Controls Above Table
+    -------------------->
+    <div class="controls-above-table">
+      <div class="row">
+        <div class="col-sm-6">
+          <span class="btn btn-sm btn-secondary">数量：{$cdkey_type_data['number']}</span>
+          <span class="btn btn-sm btn-danger">已用：{$cdkey_type_data['invalid']}</span>
+          <span class="btn btn-sm btn-secondary">{$cdkey_type_data['name']}</span>
+        </div>
+
+      </div>
+    </div>
+    <!--------------------
+    END - Controls Above Table
+    -------------------->
+    <div class="table-responsive">
+      <!--------------------
+      START - Basic Table
+      -------------------->
+      <table class="table table-lightborder">
+        <thead>
+          <tr>
+            <th>
+              ID
+            </th>
+            <th>
+              激活码
+            </th>
+            <th>
+              使用时间
+            </th>
+            <th class="text-center">
+              使用人ID
+            </th>
+            <th class="text-right">
+              使用状态
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {volist name="cdkey_list" id="vo_cdkey_list"} 
+          <tr>
+            <td>
+              {$vo_cdkey_list['id']}
+            </td>
+            <td>
+              {$vo_cdkey_list['cdkey']}
+            </td>
+            <td>
+              <?php if($vo_cdkey_list['y'] == 1){ echo  date('Y-m-d H:i:s',$vo_cdkey_list['stime']); }else{ echo ''; } ?>
+            </td>
+            <td class="text-center">
+             {$vo_cdkey_list['yid']}
+            </td>
+            <td class="text-right">
+              <div class="status-pill <?php if($vo_cdkey_list['y'] == 1){ echo 'red'; }else{ echo 'green'; } ?>" data-title="<?php if($vo_cdkey_list['y'] == 1){ echo '已使用'; }else{ echo '未使用'; } ?>" data-toggle="tooltip" data-original-title="" title=""></div>
+              
+            </td>
+          </tr>
+          
+   		{/volist}       
+
+          
+        </tbody>
+      </table>
+      <!--------------------
+      END - Basic Table
+      -------------------->
+    </div>
+  </div>
+</div>
+
+
+
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                  //  msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                 //   document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 如需继续操作，请返回激活码列表再次访问！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+   <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                如需继续操作，请返回激活码列表再次访问！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

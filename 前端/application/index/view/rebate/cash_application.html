@@ -1,0 +1,591 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile compact">
+      <div class="up-head-w" style="background-image:url(/public/static/v4/img/profile_bg1.jpg)">
+        <div class="up-social">
+          
+          
+                               <?php if($user_data['tx']=='1') { echo '<a href="#"><i class="os-icon os-icon-pie-chart-2"  data-title="正在提现" data-toggle="tooltip" ></i></a>'; } ?>
+                               <?php if(!empty($user_data['weichat'])) { echo '<a href="#"><i class="os-icon os-icon-mail-07"  data-title="微信客服已设置" data-toggle="tooltip" ></i></a>'; } ?>
+							   <?php if(!empty($user_data['phone'])) { echo '<a href="#"><i class="os-icon os-icon-phone"  data-title="手机已设置" data-toggle="tooltip" ></i></a>'; } ?>
+							   <?php if(!empty($user_data['zfb'])) { echo '<a href="#"><i class="os-icon os-icon-cv-2"  data-title="支付宝已设置" data-toggle="tooltip" ></i></a>'; } ?>
+							   <?php if(!empty($user_data['safetycode'])) { echo '<a href="#"><i class="os-icon os-icon-fingerprint"  data-title="安全码已设置" data-toggle="tooltip" ></i></a>'; } ?>
+							   <?php if(!empty($user_data['email'])) { echo '<a href="#"><i class="os-icon os-icon-mail-01"  data-title="邮箱已设置" data-toggle="tooltip" ></i></a>'; } ?>
+
+          
+        </div>
+        <div class="up-main-info">
+          <h2 class="up-header">
+            {$user_data['username']}
+          </h2>
+          <h6 class="up-sub-header">
+            账户注册时间：<?php echo  date('Y年m月d日 H:i:s',$user_data['ctime']); ?>
+          </h6>
+          <h6 class="up-sub-header">
+            最后登录时间：<?php echo  date('Y年m月d日 H:i:s',$user_data['logintime']); ?>
+          </h6>
+        </div>
+        <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
+      </div>
+      <div class="up-controls">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="value-pair">
+              <div class="label">
+                Status:
+              </div>
+
+
+                 <?php  if($user_data['status']=='1') {  ?>
+              		  <div class="value badge badge-pill badge-success">  正常  </div>
+                 <?php }else{  ?>
+              		  <div class="value badge badge-pill badge-danger">  已禁封  </div>
+                 <?php }  ?>    
+
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            
+                                 <?php
+                                   if($user_data['power']!='1'){
+                                      if($user_data['type']=='1'){
+                                          echo '<span class="btn btn-secondary btn-sm"><i class="os-icon os-icon-crown"></i>  永久会员</span>';
+                                      }else{
+                                          if($user_data['lasttime']=='0'){
+                                                  echo '<span class=" btn btn-Danger btn-sm ">未充值</span>';
+                                              }elseif($user_data['lasttime']<time()){
+                                                  echo ' <span class="btn btn-danger btn-sm"  data-title="过期于 '.date('Y年m月d日 H:i:s',$user_data['lasttime']).'" data-toggle="tooltip" ><i class="os-icon os-icon-others-43"></i>  会员过期</span>';
+                                          }else{
+                                               echo '<span class="btn btn-primary btn-sm"  data-title="将于 '.date('Y年m月d日',$user_data['lasttime']).' 过期" data-toggle="tooltip" ><i class="os-icon os-icon-ui-02"></i>  超级会员</span>';
+                                          }
+                                      }
+ 									}else{
+ 										 echo '<span class="btn btn-secondary btn-sm"><i class="os-icon os-icon-crown"></i>  荣誉代理</span>';
+									}
+                                ?>           
+            
+            
+            
+          </div>
+        </div>
+      </div>
+     <?php if($user_data['power']<'2'){ ?> 
+
+      <div class="up-contents">
+        <div class="m-b">
+          
+          <div class="row m-b">
+            
+            <div class="col-sm-4 b-r b-b">
+              <div class="el-tablo centered padded-v">
+                <div class="value" style=" font-size: 20px; ">
+                  {$rebate_count}
+                </div>
+                <div class="label">
+                  获取佣金总额
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="col-sm-4 b-r b-b">
+              <div class="el-tablo centered padded-v">
+                <div class="value" style=" font-size: 20px; ">
+                  {$rebate_ok_count}
+                </div>
+                <div class="label">
+                  已提现佣金
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-sm-4 b-b">
+              <div class="el-tablo centered padded-v">
+                <div class="value" style=" font-size: 20px; ">
+                  <?php echo $rebate_count-$rebate_ok_count; ?>
+                </div>
+                <div class="label">
+                  可提现佣金
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="padded">
+            
+ 			 <div class="os-progress-bar primary">
+               <div class="bar-labels">
+               	 <div class="bar-label-left">
+                     <span>体验</span><span class="positive" style="color: #456CF9;">激活率：{$cdkey_data['experience_details_used_ratio']}</span>
+                 </div>
+                 <div class="bar-label-right">
+                     <span class="info">{$cdkey_data['experience_details_used']}/{$cdkey_data['experience_details_total']}</span>
+                  </div>
+                </div>
+                <div class="bar-level-1" style="width: 100%">
+                   <div class="bar-level-2" style="width: {$cdkey_data['experience_details_used_ratio']}">
+                      <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                   </div>
+                </div>
+             </div>
+            
+            
+ 			 <div class="os-progress-bar primary">
+               <div class="bar-labels">
+               	 <div class="bar-label-left">
+                     <span>一月</span><span class="positive" style="color: #456CF9;">激活率：{$cdkey_data['one_month_details_ratio']}</span>
+                 </div>
+                 <div class="bar-label-right">
+                     <span class="info">{$cdkey_data['one_month_details_used']}/{$cdkey_data['one_month_details_total']}</span>
+                  </div>
+                </div>
+                <div class="bar-level-1" style="width: 100%">
+                   <div class="bar-level-2" style="width: {$cdkey_data['one_month_details_ratio']}">
+                      <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                   </div>
+                </div>
+             </div>
+            
+            
+ 			 <div class="os-progress-bar primary">
+               <div class="bar-labels">
+               	 <div class="bar-label-left">
+                     <span>半年</span><span class="positive" style="color: #456CF9;">激活率：{$cdkey_data['half_a_year_details_ratio']}</span>
+                 </div>
+                 <div class="bar-label-right">
+                     <span class="info">{$cdkey_data['half_a_year_details_used']}/{$cdkey_data['half_a_year_details_total']}</span>
+                  </div>
+                </div>
+                <div class="bar-level-1" style="width: 100%">
+                   <div class="bar-level-2" style="width: {$cdkey_data['half_a_year_details_ratio']}">
+                      <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                   </div>
+                </div>
+             </div>
+            
+            
+ 			 <div class="os-progress-bar primary">
+               <div class="bar-labels">
+               	 <div class="bar-label-left">
+                     <span>一年</span><span class="positive" style="color: #456CF9;">激活率：{$cdkey_data['one_year_details_ratio']}</span>
+                 </div>
+                 <div class="bar-label-right">
+                     <span class="info">{$cdkey_data['one_year_details_used']}/{$cdkey_data['one_year_details_total']}</span>
+                  </div>
+                </div>
+                <div class="bar-level-1" style="width: 100%">
+                   <div class="bar-level-2" style="width: {$cdkey_data['one_year_details_ratio']}">
+                      <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                   </div>
+                </div>
+             </div>
+            
+            
+ 			 <div class="os-progress-bar primary">
+               <div class="bar-labels">
+               	 <div class="bar-label-left">
+                     <span>永久</span><span class="positive" style="color: #456CF9;">激活率：{$cdkey_data['permanent_details_ratio']}</span>
+                 </div>
+                 <div class="bar-label-right">
+                     <span class="info">{$cdkey_data['permanent_details_used']}/{$cdkey_data['permanent_details_total']}</span>
+                  </div>
+                </div>
+                <div class="bar-level-1" style="width: 100%">
+                   <div class="bar-level-2" style="width: {$cdkey_data['permanent_details_ratio']}">
+                      <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                   </div>
+                </div>
+             </div>
+            
+            
+
+          </div>
+          
+        </div>
+      </div>
+
+      	<?php	} ?> 
+      
+    </div>
+
+  </div>
+  <div class="col-sm-7">
+    <div class="element-wrapper">
+      <div class="element-box">
+         <form class="form-material"   role="form" id="form1" method="post" action="{:url('rebate/cash_application')}" >
+          <div class="element-info">
+            <div class="element-info-with-icon">
+              <div class="element-info-icon">
+                <div class="os-icon os-icon-wallet-loaded"></div>
+              </div>
+              <div class="element-info-text">
+                <h5 class="element-inner-header">
+                  提现审核
+                </h5>
+                <div class="element-inner-desc">
+                  提现用户资料.  <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+     
+
+
+          <div class="row">
+            <div class="col-sm-6">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       手机
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" value="{$user_data['phone']}" disabled="disabled">
+                  </div>             
+
+            </div>
+            
+            
+
+            <div class="col-sm-6">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       微信
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" value="{$user_data['weichat']}" disabled="disabled">
+                  </div>             
+              
+            </div>
+                        
+            
+            
+            
+            
+
+
+          </div>
+          
+           
+           
+           <br>
+           
+        
+           
+  
+          <div class="row">
+            <div class="col-sm-12">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       邮箱
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" value="{$user_data['email']}" disabled="disabled">
+                  </div>             
+
+            </div>
+            
+            
+
+
+          </div>
+          
+                      
+           
+           
+
+
+
+          <fieldset class="form-group">
+            <legend><span>提现处理</span></legend>
+
+  
+          <div class="row">
+            
+            <div class="col-sm-6">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       支付宝
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" value="{$user_data['zfb']}" disabled="disabled">
+                  </div>             
+              
+            </div>            
+            
+            <div class="col-sm-6">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       实名
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" value="{$user_data['zfb_name']}" disabled="disabled">
+                  </div>             
+
+            </div>
+                        
+
+          </div>
+          
+           
+           
+           <br> 
+           
+           
+  
+          <div class="row">
+            <div class="col-sm-6">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       提现金额 ¥
+                      </div>
+                    </div>
+                    <input class="form-control" type="text"  value="{$user_data['txje']}" disabled="disabled">
+                  </div>             
+
+            </div>
+            
+            
+
+                <div class="col-sm-6">
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        操作
+                      </div>
+                    </div>
+                    
+                  <select class="form-control"  name="status" id="status">
+                  <option value="0" > - 请选择 - </option>
+                  <option value="1" >已打款</option>
+                  <option value="3" >驳回</option>
+                  </select>
+                    
+                  </div>
+                </div>
+              </div>  
+          
+          </div>
+          
+ 
+
+
+                
+      
+            <div class="form-group" id="remarks" ><textarea class="form-control" placeholder="拒绝原因" rows="5"  name="remarks"></textarea></div>      
+
+            
+            
+
+
+          </fieldset>
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <input type="hidden" name="application_id"  id="application_id"  value="{$user_data['id']}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+              
+              
+
+         
+              
+              
+              
+              
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <!--------------------
+              START - Support Agents
+              -------------------->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  邀请人
+                </h6>
+                <div class="element-box-tp">
+
+                  <div class="profile-tile">
+                    <a class="profile-tile-box" href="users_profile_small.html">
+                      <div class="pt-avatar-w">
+                        <img alt="" src="/public/static/v4/img/Ryan.png">
+                      </div>
+                      <div class="pt-user-name">
+                        {$from_user_data['username']}
+                      </div>
+                    </a>
+                    <div class="profile-tile-meta">
+                      <ul>
+                        <li>
+                          用户ID:<strong> {$from_user_data['id']}</strong>
+                        </li>
+                        <li>
+                          微信:<strong> {$from_user_data['weichat']}</strong>
+                        </li>
+                        <li>
+                          团队人数:<strong>{$from_user_t_count} 人</strong>
+                        </li>
+                      </ul>
+                      <div class="pt-btn">
+                      
+                        <a class="btn btn-secondary btn-sm" href="<?php echo url('user/edit'); ?>?edit_id={$from_user_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}">   <i class="os-icon os-icon-pencil-1"></i> 查 看 资 料 </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--------------------
+              END - Support Agents
+              -------------------->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  近期邀请用户
+                </h6>
+                <div class="element-box-tp">
+      
+                  <div class="users-list-w">
+                    
+                   {volist name="Invitation_list_data" id="vo"}                     
+                    <div class="user-w with-status status-<?php  if($vo['status']=='1') { echo 'green'; }else{ echo 'red';}  ?>" >  
+                      <div class="user-avatar-w">
+                        <div class="user-avatar">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                      </div>
+                      <div class="user-name">
+                        <h6 class="user-title">
+                          {$vo['username']}
+                        </h6>
+                        <div class="user-role">
+                         邀请时间： <?php echo  date('Y-m-d H:i:s',$vo['ctime']); ?>
+                        </div>
+                      </div>
+                      <div class="user-action"  onclick="window.open('edit?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                        <div class="os-icon os-icon-cv-2"></div>
+                      </div>
+                    </div>
+                   {/volist} 
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--------------------
+            END - Sidebar
+            -------------------->
+          </div>
+
+
+
+
+  <script src="/public/static/v4/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  var check = document.getElementsByTagName('input')[0];
+console.log(check.checked);//false
+  
+  $(function() {
+            $("#remarks").hide();
+            $("#status").change(function() {
+                if($(this).val() == 3 ) {
+                    $("#remarks").show();
+                } else{
+                    $("#remarks").hide();
+                }
+            })
+        })
+ </script>
+
+
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+
+
+
+
+
+
+
+
+
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,343 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row">
+                <div class="col-sm-12 col-xxxl-12">
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      直播 - 自定义个性化
+                    </h6>
+
+                    
+                    
+             		 <div class="element-box">
+                      <form class="form-material"   role="form" id="form1" method="post" action="{:url('live/setup_tv')}" >
+  
+                 <!--   <div class="profile-tile">
+                      <a class="profile-tile-box">
+                        <div class="pt-avatar-w">
+                          <img alt="" src="<?php if(strpos(advert('2000'),'http://') !== false){  echo advert('2000'); }else if(strpos(advert('2000'),'https://') !== false){  echo advert('2000');  }else{ echo input('server.REQUEST_SCHEME') . '://' . input('server.SERVER_NAME') . advert('2000') ; }  ?>">
+                        </div>
+                      </a>
+                      
+
+                      
+                    </div> 
+                        
+                        -->
+                        
+                      
+          <fieldset class="form-group">
+            <legend><span>首页 - 个性化</span></legend>
+            
+			<div class="row">
+				
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       标题文字 - 首页
+                      </div>
+                    </div><input class="form-control"  placeholder="Title" type="text" name="live_text" value="{:advert('2001')}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       按钮文字 - 首页
+                      </div>
+                    </div><input class="form-control"  placeholder="Title" type="text" name="live_button"  value="{:advert('2002')}" >
+                  </div>        
+            </div>             
+            		
+				
+
+            
+            
+           </div> 
+              
+
+          </fieldset> 
+          
+                        
+       
+       
+       
+                        
+                           
+                      
+          <fieldset class="form-group">
+            <legend><span>直播 - 广告设置</span></legend>
+                         
+              <div class="onboarding-text" style=" color: #9E9E9E; ">
+                建议尺寸：高度 466px  宽度 364px
+              </div>
+              
+			<div class="row">
+				
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片地址 - 左上
+                      </div>
+                    </div><input class="form-control"  placeholder="Img Url" type="text" name="live_left_upper_img" value="{:advert('2003')}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转地址 - 左上
+                      </div>
+                    </div><input class="form-control"  placeholder="Url" type="text" name="live_left_upper_url"  value="{:advert('2004')}" >
+                  </div>        
+            </div>             
+            		
+           </div> 
+              
+              <br>
+              
+              
+                         
+              <div class="onboarding-text" style=" color: #9E9E9E; ">
+                建议尺寸：高度 315px  宽度 364px
+              </div>
+			<div class="row">
+				
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片地址 - 右上
+                      </div>
+                    </div><input class="form-control"  placeholder="Img Url" type="text" name="live_right_upper_img" value="{:advert('2005')}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转地址 - 右上
+                      </div>
+                    </div><input class="form-control"  placeholder="Url" type="text" name="live_right_upper_url"  value="{:advert('2006')}" >
+                  </div>        
+            </div>             
+            		
+           </div> 
+              
+       
+              <br>
+              
+                         
+              <div class="onboarding-text" style=" color: #9E9E9E; ">
+                建议尺寸：高度 119px  宽度 364px
+              </div>
+              
+			<div class="row">
+				
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片地址 - 右下
+                      </div>
+                    </div><input class="form-control"  placeholder="Img Url" type="text" name="live_right_lower_img" value="{:advert('2007')}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转地址 - 右下
+                      </div>
+                    </div><input class="form-control"  placeholder="Url" type="text" name="live_right_lower_url"  value="{:advert('2008')}" >
+                  </div>        
+            </div>             
+            		
+           </div> 
+              
+              
+       
+              <br>
+              
+                         
+              <div class="onboarding-text" style=" color: #9E9E9E; ">
+                建议尺寸：高度 178px  宽度 763px
+              </div>
+              
+              
+			<div class="row">
+				
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       图片地址 - 横幅
+                      </div>
+                    </div><input class="form-control"  placeholder="Img Url" type="text" name="live_benner_img" value="{:advert('2009')}" >
+                  </div>        
+            </div>             
+            			
+	              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转地址 - 横幅
+                      </div>
+                    </div><input class="form-control"  placeholder="Url" type="text" name="live_benner_url"  value="{:advert('2010')}" >
+                  </div>        
+            </div>             
+            		
+           </div> 
+              
+                     
+              
+          </fieldset> 
+          
+                        
+                                       
+ 
+
+            
+            
+            
+            
+                        
+                                     
+              <div class="onboarding-text" style=" color: #9E9E9E; ">
+                请尽量根据建议尺寸设计图片,以免影响页面美观!
+              </div>
+              
+                        <div class="form-buttons-w">
+                          
+                          <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+                          <button class="btn btn-primary" type="submit"> 确定</button> <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-wrapper">
+                 {volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                {/volist} 
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+
+
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

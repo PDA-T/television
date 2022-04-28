@@ -1,0 +1,326 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('advertisement/launch_page')}" >
+          <h5 class="form-header">
+            启动页广告设置
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交. 
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+          
+
+  
+          <div class="row">
+            
+            <div class="col-sm-12">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       广告图片
+                      </div>
+                    </div>
+                    <input class="form-control" type="text"  name="launchImageAd"  value="{:advert('354')}" >
+                  </div>             
+              
+            </div>            
+               
+
+          </div>
+            
+              <br> 
+
+      
+          <div class="row">
+            
+            <div class="col-sm-12">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       启动标识
+                      </div>
+                    </div>
+                    <input class="form-control" type="text"  name="launchImageAd_bottom"  value="{:advert('358')}" >
+                  </div>             
+              
+            </div>            
+               
+
+          </div>
+            
+              <br> 
+      
+             <div class="row">        
+            <div class="col-sm-12">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       跳转链接
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="launchImageAd_url" value="{:advert('355')}" >
+                  </div>             
+
+            </div>
+                     
+                 </div>    
+           <br> 
+           
+           
+  
+          <div class="row">
+            <div class="col-sm-6">
+              
+              
+ 				<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       等待时间（毫秒）
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="launchImageAd_time" value="{:advert('356')}">
+                  </div>             
+
+            </div>
+            
+              
+                <div class="col-sm-6">
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        是否允许跳过
+                      </div>
+                    </div>
+                    
+                     <select class="form-control"  name="launchImageAd_skip"  value="{:advert('357')}">
+                        <option value="0" <?php if(advert('357') == '0'){ echo 'selected';} ?>>不允许</option>
+                        <option value="1" <?php if(advert('357') == '1'){ echo 'selected';} ?>>允许</option>
+                    </select>
+				                      
+                    
+                  </div>
+                </div>
+              </div>  
+          
+          </div>
+          
+ 			
+                  
+
+          
+          
+          
+          
+          
+          
+     
+          
+
+                    
+          
+          
+          
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+              
+ <div class="element-wrapper">
+  <h6 class="element-header">
+    预览
+  </h6>
+
+   
+                 
+      <div id="phone">
+          <div id="camera"></div>
+          <div id="headphone"></div>
+          <div id="screen">              
+           <img alt="" src="{:advert('354')}" style=" width: 100%; height: 80%; ">
+        </div>
+          <div id="btn"></div>
+      </div>
+
+   
+   
+</div>             
+              
+
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+body{
+background-color:#CCC;}
+#phone{
+width:250px;
+height:500px;
+background-color:#2e2e2e;
+margin:60px auto;
+border:#3b3b3b solid 10px;
+border-radius:50px;
+box-shadow:3px 5px 5px 1px rgba(0,0,0,0.5);
+position:relative;
+}
+#phone:before{
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: #2e2e2e;
+    display: block;
+    position: absolute;
+    top: -12px;
+    left: 150px;
+    border-radius: 3px 3px 0px 0px;}
+#phone:after{
+content:'';
+width:6px;
+height:50px;
+background-color:#2e2e2e;
+display:block;
+position:absolute;
+left:-16px;
+top:60px;
+border-radius:3px 3px 0px 0px;}
+#camera{
+width:6px;
+height:6px;
+border:#4a4a4a solid 3px;
+margin:20px auto 0px;
+border-radius:50%;
+box-shadow:1px 2px 2px rgba(0,0,0,0.5);}
+#headphone{
+width:60px;
+height:5px;
+border:#4a4a4a solid 4px;
+margin:13px auto;
+border-radius:10px;
+box-shadow:1px 2px 2px rgba(0,0,0,0.5);
+}
+#screen{
+width:220px;
+height:360px;
+margin:15px auto 0px;
+background-image: url({:advert('358')});
+background-repeat: no-repeat;
+background-size: 100% 100%;
+-moz-background-size: 100% 100%;
+background-color:#0a0a0a;
+border:#1a1a1a solid 4px;}
+#btn{
+width:40px;
+height:40px;
+background-color:#1a1a1a;
+margin:8px auto 0px;
+border-radius:50px;
+box-shadow:2px 2px 2px rgba(0,0,0,0.5) inset;
+overflow:hidden;  /*阻止边界的传导*/}
+#btn:before{
+content:'';
+width:20px;
+height:20px;
+border:#fff solid 2px;
+display:block;
+margin:9px auto;
+border-radius:5px;
+}
+</style>

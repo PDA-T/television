@@ -1,0 +1,569 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('index/interface')}" >
+          <h5 class="form-header">
+            解析接口设置
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交. 
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+          
+          
+          
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口一</label><input class="form-control"  placeholder="Confirm Url" required="required" type="text"  value="{:advert('8')}"  name="interface_one" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label >接口二</label><input class="form-control" placeholder="Confirm Url" type="text"  value="{:advert('9')}"  name="interface_two" >
+              </div>
+            </div>
+
+            
+            
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口三</label><input class="form-control"  placeholder="Confirm Url" type="text"  value="{:advert('10')}"  name="interface_three" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">接口四</label><input class="form-control"  placeholder="Confirm Url"  type="text"   value="{:advert('11')}"  name="interface_four" >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口五</label><input class="form-control"  placeholder="Confirm Url"  type="text"  value="{:advert('12')}"  name="interface_five" >
+              </div>
+            </div>               
+
+          </div>
+
+
+
+          
+
+            <fieldset class="form-group">
+            <legend><span>独立解析接口 for IOS</span></legend>
+                
+          
+            
+            
+	        <div class="row">		
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       IOS 独立接口
+                      </div>
+                    </div>
+                    <select class="form-control"   value="advert('1500')"  name="Ios_alone_interface_switch" id="status">
+              <option value="1" <?php if(advert('1500') ==1){echo 'selected';} ?>>
+                启用
+              </option>
+              <option value="0" <?php if(advert('1500') ==0){echo 'selected';} ?>>
+                关闭
+              </option>
+
+            </select>      
+                  </div>        
+            </div> 
+            </div>  
+            
+			<br>
+		
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口一  </label><input class="form-control"  placeholder="Confirm Url" type="text"  value="{:advert('1501')}"  name="jx_ios_Interface_one" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label >接口二  </label><input class="form-control" placeholder="Confirm Url" type="text"  value="{:advert('1502')}"  name="jx_ios_Interface_two" >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口三 </label><input class="form-control"  placeholder="Confirm Url" type="text"  value="{:advert('1503')}"  name="jx_ios_Interface_three" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">接口四  </label><input class="form-control"  placeholder="Confirm Url"  type="text"   value="{:advert('1504')}"  name="jx_ios_Interface_four" >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口五  </label><input class="form-control"  placeholder="Confirm Url"  type="text"  value="{:advert('1505')}"  name="jx_ios_Interface_five" >
+              </div>
+            </div>
+
+          </div>
+   
+               </fieldset>    
+
+
+ 
+          <fieldset class="form-group">
+            <legend><span>苹果CMS地址 (需要http://或者https://)</span></legend>
+            
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input class="form-control"  placeholder="Confirm Url"  type="text"  value="{:advert('113')}"  name="search_api_url" >
+              </div>
+            </div>
+
+          </div>
+          </fieldset>
+         
+               
+
+          
+           <fieldset class="form-group">
+            <legend><span>JSON / API 接口</span></legend>
+             
+          <div class="row">
+
+
+
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       是否启用
+                      </div>
+                    </div>
+                    <select class="form-control"   value="advert('80')"  name="interface_type_opt">
+              <option value="1" <?php if(advert('80') ==1){echo 'selected';} ?>>
+                启用
+              </option>
+              <option value="0" <?php if(advert('80') ==0){echo 'selected';} ?>>
+                关闭
+              </option>
+
+            </select>      
+                  </div>        
+            </div>                
+            
+
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       接口切换
+                      </div>
+                    </div>
+                    <select class="form-control"   value="advert('310')"  name="interface_json_opt">
+              <option value="1" <?php if(advert('301') ==1){echo 'selected';} ?>>
+                接口 ①
+              </option>
+              <option value="2" <?php if(advert('301') ==2){echo 'selected';} ?>>
+                接口 ②
+              </option>
+
+            </select>      
+                  </div>        
+            </div>                
+            
+          </div>
+        
+ 
+                 <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       APPID - 内置 ①
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Uid"  type="text"  value="{:advert('13')}"  name="interface_json_one_id" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       TOKEN - 内置 ①
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{:advert('14')}"  name="interface_json_one_token" >
+                  </div>        
+            </div>                   
+                
+           
+                
+                  
+          </div>        
+        
+
+         
+                 <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       APPID - 内置 ②
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Uid"  type="text"  value="{:advert('15')}"  name="interface_json_two_id" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       TOKEN - 内置 ②
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{:advert('16')}"  name="interface_json_two_token" >
+                  </div>        
+            </div>        
+        
+        
+        
+               </fieldset>     
+    
+    
+    
+    
+    
+    
+    
+            
+          
+           <?php if(advert('309') ==1){ ?>
+           <fieldset class="form-group">
+
+            <legend><span> START PLAY DECISION </span></legend>
+
+             
+
+             
+             
+             
+             
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       爱奇艺
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['iqy']}"  name="iqy_play_decide" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       腾讯
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['tx']}"  name="tx_play_decide" >
+                  </div>        
+            </div>                   
+                
+           
+                
+                  
+          </div>        
+        
+
+         
+                 <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       优酷
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['yk']}"  name="yk_play_decide" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       搜狐
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['sohu']}"  name="sohu_play_decide" >
+                  </div>        
+            </div>        
+        
+           </div> 
+        
+             
+             
+                  <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       乐视
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['ls']}"  name="leshi_play_decide" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       M1905
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['m1905']}"  name="m1905_play_decide" >
+                  </div>        
+            </div>        
+        
+           </div> 
+             
+             
+             
+                              <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       芒果
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['mg']}"  name="mg_play_decide" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       咪咕
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['migu']}"  name="migu_play_decide" >
+                  </div>        
+            </div>        
+        
+           </div> 
+             
+             
+             
+                              <br>
+        
+                <div class="row">
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       PPTV
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Uid"  type="text"  value="{$play_decide['pptv']}"  name="pptv_play_decide" >
+                  </div>        
+            </div>                   
+                
+              <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       风行
+                      </div>
+                    </div><input class="form-control"  placeholder="Confirm Key"  type="text"  value="{$play_decide['fx']}"  name="fx_play_decide" >
+                  </div>        
+            </div>        
+        
+           </div> 
+             
+               </fieldset>       
+			<?php  } ?>    
+    
+    
+    
+    
+    
+    
+           <br>
+
+
+
+          
+          
+          
+          
+          
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary " type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+
+
+
+
+  <script src="/public/static/v4/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+
+  $(function() {
+            $("#remarks").hide();
+            $("#status").change(function() {
+                if($(this).val() == 1 ) {
+                    $("#remarks").show();
+                } else{
+                    $("#remarks").hide();
+                }
+            })
+        })
+ </script>
+ 
+
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+    
+    
+             function aq() {
+
+               		 document.getElementById("buttonid").click();
+
+
+            }   
+    
+
+ </script>

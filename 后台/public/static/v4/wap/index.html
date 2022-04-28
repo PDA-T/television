@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>完美网服</title>
+    <link rel="stylesheet" type="text/css" href="aui.css" />
+    <link rel="stylesheet" type="text/css" href="swiper.min.css" />
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-wrapper .swiper-slide:nth-child(1){
+            background: url('/bg1.png') no-repeat #1b1f2a;
+            background-size: contain;
+        }
+        .swiper-wrapper .swiper-slide:nth-child(2){
+            background: url('/bg2.png') no-repeat #1b1f2a;
+            background-size: contain;
+        }
+        .swiper-wrapper .swiper-slide:nth-child(3){
+            background: url('/bg3.png') no-repeat #1b1f2a;
+            background-size: contain;
+        }
+        img.phone-img {
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            bottom: 0;
+            z-index: 1;
+        }
+        img.bottom-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+        .wrap {
+            width: 100%;
+            position: absolute;
+            top: 90px;
+            text-align: center;
+            left: 0;
+            color: #fff;
+        }
+        .wrap .title {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .wrap .desc {
+            font-size: 14px;
+        }
+        .top{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            background-color: rgba(31,31,31,.46);
+        }
+        .aui-list {
+            background: none;;
+        }
+        .text-white {
+            color: #fff !important;
+        }
+        .aui-list .aui-list-item-media img {
+            width: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="aui-list aui-list-noborder">
+            <div class="aui-list-item">
+                <div class="aui-list-item-left">
+                    <div class="aui-list-item-media">
+                        <img src="logo.png" />
+                    </div>
+                </div>
+                <div class="aui-list-item-center">
+                    <div class="aui-list-item-title text-white">全视频影院</div>
+                    <div class="aui-list-item-subtitle text-white aui-margin-t-5 aui-font-size-12">2亿人下载</div>
+                </div>
+                <div class="aui-list-item-right">
+                    <img src="download.png" style="width:100px" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide item-1">
+                <div class="wrap">
+                    <div class="title">全视频——给你好看</div>
+                    <div class="desc">院线大片/资源丰富/高清画质/高速加载</div>
+                </div>
+                <img src="p1.png" class="phone-img"/>
+                <img src="img1.png" class="bottom-img" />
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap">
+                    <div class="title">史上最全影视库</div>
+                    <div class="desc">网罗电影/电视剧/经典美剧/综艺/动漫等</div>
+                </div>
+                <img src="p1.png" class="phone-img"/>
+                <img src="img2.png" class="bottom-img" />
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap">
+                    <div class="title">院线大片抢先看</div>
+                    <div class="desc">尝鲜体验院线大片/拒绝做剧透小白</div>
+                </div>
+                <img src="p1.png" class="phone-img"/>
+                <img src="img3.png" class="bottom-img" />
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</body>
+<script type="text/javascript" src="swiper.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        autoplay:true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            
+        },
+    });
+</script>
+
+</html>

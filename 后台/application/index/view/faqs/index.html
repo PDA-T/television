@@ -1,0 +1,63 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      FAQS
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+
+                          <tbody>
+                            {volist name="faq_list" id="vo"}   
+                            
+                            <tr>
+                              <td class="text-center" style=" width: 10px;">
+                                {$vo['id']}
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                 <span>{$vo['question']}</span>
+                                </div>
+                              </td>
+
+
+                              <td class="row-actions">
+                                <a href="<?php echo url('faqs/edit'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-pencil-1"></i></a>
+                            <!--    <a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a> -->
+                              </td>
+                            </tr>
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$faq_list->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              <div class="floated-chat-btn"  onclick="window.open('<?php echo url('faqs/add'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+
+                <span><i class="os-icon os-icon-pencil-1"></i><span>添加</span></span>
+
+              </div>
+              
+              
+            </div>
+          </div>

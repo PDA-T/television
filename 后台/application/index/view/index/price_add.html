@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+
+
+<div class="content-i">
+            <div class="content-box">   
+              <div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('index/price_add')}" >
+
+          <h5 class="form-header">
+            价格 / 发卡 新增
+          </h5>
+          
+          
+          
+          
+           
+          
+          
+    <?php if($SetupState == 1){ ?> 
+
+              
+              		<div class="col-xxl-13" >
+                      <!--START - MESSAGE ALERT-->
+                      <div class="alert alert-warning borderless">
+                        <h5 class="alert-heading">
+                          所有类型均已绑定
+                        </h5>
+                        <p>
+                          可以尝试编辑已有类型 或 删除后再添加！
+                        </p>   
+                        
+                     	 <div class="alert-btn">
+                          <a class="btn btn-white-gold" href="price"><i class="os-icon os-icon-ui-92"></i><span>返回列表</span></a>
+                        </div>
+                        
+                      </div>                     
+                      <!--END - MESSAGE ALERT-->
+                    </div>
+                     
+      <?php  } else{ ?>           
+          
+          
+          
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交. 
+          </div>
+          
+          
+ 	<button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+         <div class="form-group"> 
+                  <label for=""> 绑定类型</label>
+           
+                      
+
+           
+                              <div class="label_box">
+                                
+                                  <label <?php if($experience == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1000" <?php if($experience == 1){ echo ' disabled';}?>>
+                                   <div>体验</div>
+                                   </label>
+           
+                                  <label <?php if($one_month == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1001" <?php if($one_month == 1){ echo ' disabled';}?>>
+                                  <div>一月</div>
+                                  </label>
+                                
+                                  <label <?php if($half_a_year == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1002" <?php if($half_a_year == 1){ echo ' disabled';}?>>
+                                  <div>半年</div>
+                                  </label>
+                                
+                                  <label <?php if($one_year == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1003" <?php if($one_year == 1){ echo ' disabled';}?>>
+                                  <div>一年</div>
+                                  </label>
+                                
+                                  <label <?php if($permanent == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1004" <?php if($permanent == 1){ echo ' disabled';}?>>
+                                  <div>永久</div>
+                                  </label>
+                                
+                                  <label <?php if($agent == 1){ echo ' style="display:none" ';}?> >
+                                  <input name="type" type="radio" value="1010" <?php if($agent == 1){ echo ' disabled';}?>>
+                                  <div>代理</div>
+                                  </label>
+                              </div>
+        </div>          
+          
+     
+         <div class="form-group">
+            <input class="form-control" placeholder="自定义会员类型名称" required="required" type="text"  name="name">
+          </div>
+
+         <div class="form-group">
+            <input class="form-control" placeholder="显示价格" required="required" type="number"  name="cost_price">
+          </div>
+
+         <div class="form-group">
+            <input class="form-control" placeholder="简介" required="required" type="text"  name="content">
+          </div>
+  
+         <div class="form-group">
+           <input class="form-control"  placeholder="购买地址" required="required" type="text"  name="gokaurl">
+            <div class="help-block form-text text-muted form-control-feedback">http:// 或 https://</div>
+          </div>
+
+
+
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+  <?php }?>    
+          
+          
+          
+          
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+<!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>

@@ -1,0 +1,63 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  激活码使用日志
+                </h6>
+                <div class="element-box-tp">
+                  <div class="table-responsive">
+                    <table class="table table-padded">
+                      <thead>
+                        <tr>
+                          <th>
+                            时间
+                          </th>
+                          <th>
+                            激活码
+                          </th>
+                          <th class="text-center">
+                            使用人ID
+                          </th>
+                          <th class="text-center">
+                            所属人ID
+                          </th>
+                          <th class="text-right">
+                            类型
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                        {volist name="cdkey_use_list" id="vo"} 
+                        
+                        <tr onclick="window.open('search?cdkey={$vo['cdkey']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                          <td>
+                            <span><?php echo  date('Y-m-d',$vo['stime']); ?></span><span class="smaller lighter"><?php echo  date('H:i:s',$vo['stime']); ?></span>
+                          </td>
+                          <td class="cell-with-media">
+                            <span>{$vo['cdkey']}</span>
+                          </td>
+                          <td class="text-center">
+                            <a class="badge badge-secondary" href="">{$vo['yid']}</a>
+                          </td>
+                          <td class="text-center">
+                            <a class="badge badge-primary" href="">{$vo['uid']}</a>
+                          </td>
+                          <td class="text-right bolder nowrap">
+                            <span class="text-primary">{$vo['name']}</span>
+                          </td>
+                        </tr>
+                        
+                        {/volist} 
+                        
+                        
+                      </tbody>
+                    </table>
+                    {$cdkey_use_list->render()}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>

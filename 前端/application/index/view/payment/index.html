@@ -1,0 +1,121 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      支付记录
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>
+                                用户
+                              </th>
+                              <th>
+                                类型
+                              </th>
+                              <th  class="text-center">
+                                订单/实收金额
+                              </th>
+                              <th>
+                                订单编号
+                              </th>
+                              <th>
+                                交易号
+                              </th>
+                              <th>
+                                支付账户
+                              </th>
+                              <th>
+                                订单状态
+                              </th>
+                              <th class="row-actions">
+                                订单创建时间
+                              </th>
+                              <th class="row-actions">
+                                交易付款时间
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="payment_log" id="vo"}  
+                            <tr>
+                              <td class="text-center">
+                                <span class="smaller lighter">{$vo['id']}</span>
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                  <span class="smaller lighter" > UID:{$vo['uid']}</span>
+                                  <span class="smaller lighter" > {$vo['username']}</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="smaller lighter">
+                                 {$vo['subject']} 
+                                </div>
+                              </td>
+                              <td class="text-center">
+                                <div class="value badge badge-pill badge-primary">¥ {$vo['total_amount']} / {$vo['receipt_amount']} </div>
+                              </td>
+                              <td class="text-center">
+                                <div class="smaller lighter">{$vo['out_trade_no']} </div>
+                              </td>
+                              <td class="text-center">
+                                <div class="smaller lighter">{$vo['trade_no']} </div>
+                              </td>
+                              <td class="text-center">
+                                <div class="smaller lighter"> {$vo['buyer_logon_id']} </div>
+                              </td>
+                              <td class="nowrap">
+                                                            
+                            <?php  if($vo['trade_status']=='WAIT_BUYER_PAY') {  ?>
+                            	 <div class="status-pill red" data-title="待支付" data-toggle="tooltip" ></div>
+                                <span  class="smaller lighter">待支付</span>
+                            <?php }else if($vo['trade_status']=='TRADE_SUCCESS') {   ?>
+                           		 <div class="status-pill green" data-title="已支付" data-toggle="tooltip" ></div>
+                                <span  class="smaller lighter">已支付</span>
+                            <?php } ?>
+                                
+                              </td>
+                              <td class="row-actions">
+                                <span class="smaller lighter" >{$vo['gmt_create']} </span>
+                              </td>
+                              <td>
+                                <span class="smaller lighter">{$vo['gmt_payment']}</span>
+                              </td>
+                            </tr>
+                           
+                            
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$payment_log->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+              
+
+              
+              <div class="floated-chat-btn" onclick="window.location.href = '<?php echo url('payment/search'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'">
+
+                <span><i class="os-icon os-icon-wallet-loaded"></i><span>订单检索</span></span>
+
+              </div>
+              
+              
+            </div>
+          </div>

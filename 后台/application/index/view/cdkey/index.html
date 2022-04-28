@@ -1,0 +1,618 @@
+<div class="content-i">
+            <div class="content-box">
+              <!--START - Control panel above projects-->
+              <div class="os-tabs-w mx-4">
+                
+              </div>
+              <!--END - Control panel above projects-->
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="padded-lg">
+                    <!--START - Projects list-->
+                    <div class="projects-list">
+                      <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                              体验 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1000"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                               		 <button class=" btn btn-primary btn-sm " type="submit"  id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+   
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['experience_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style="font-size: 25px;">
+                                      {$cdkey_information['experience_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                    <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['experience_used_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info">{$cdkey_information['experience_used']}/{$cdkey_information['experience_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                  <div class="bar-level-2" style="width: {$cdkey_information['experience_used_ratio']}">
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                              一月 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1001"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                                <button class=" btn btn-primary btn-sm " type="submit" id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+                            
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['one_month_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style=" font-size: 25px;">
+                                      {$cdkey_information['one_month_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                   <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['one_month_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info"> {$cdkey_information['one_month_used']}/ {$cdkey_information['one_month_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                  <div class="bar-level-2" style="width: {$cdkey_information['one_month_ratio']}">
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                               半年 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1002"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                                <button class=" btn btn-primary btn-sm " type="submit" id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['half_a_year_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style=" font-size: 25px;">
+                                      {$cdkey_information['half_a_year_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                    <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['half_a_year_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info">{$cdkey_information['half_a_year_used']}/{$cdkey_information['half_a_year_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                  <div class="bar-level-2" style="width: {$cdkey_information['half_a_year_ratio']}">
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                               一年 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1003"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                                <button class=" btn btn-primary btn-sm " type="submit" id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['one_year_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style=" font-size: 25px;">
+                                      {$cdkey_information['one_year_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                    <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['one_year_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info">{$cdkey_information['one_year_used']}/{$cdkey_information['one_year_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                  <div class="bar-level-2" style="width: {$cdkey_information['one_year_ratio']}">
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                           
+                       <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                               永久 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1004"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                                <button class=" btn btn-primary btn-sm " type="submit" id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['permanent_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style=" font-size: 25px;">
+                                      {$cdkey_information['permanent_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                    <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['permanent_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info">{$cdkey_information['permanent_used']}/{$cdkey_information['permanent_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                  <div class="bar-level-2" style="width: {$cdkey_information['permanent_ratio']}">
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                     
+                      
+                      
+                      <div class="project-box">
+                        <div class="project-head">
+                          <div class="project-title">
+                            <h7>
+                              代理 - 激活码生成
+                            </h7>
+                          </div>
+                          <div class="project-users">
+                            <form role="form" id="form1" method="post" action="{:url('cdkey/write_cdkey')}"  onsubmit="return dosubmit()" >
+                             <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  数量
+                                </div>
+                               </div>
+                                <input class="form-control" placeholder="请输入数量" type="number"  name="cdkey_num">
+                                <input class="form-control" type="hidden"  value="1010"  name="cdkey_type" >
+                                <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" ><input type="hidden" name="token"  id="token"   value="{$token}" >
+                                <button class=" btn btn-primary btn-sm " type="submit" id="submit"> 提交</button>
+                          		</div>
+                             </form> 
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <div class="row align-items-center">
+                            <div class="col-sm-5">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      已使用
+                                    </div>
+                                    <div class="value" style=" color: rgba(0, 0, 0, 0.4);font-size: 25px;">
+                                      {$cdkey_information['agent_used']}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-6">
+                                  <div class="el-tablo highlight">
+                                    <div class="label">
+                                      未使用
+                                    </div>
+                                    <div class="value" style=" font-size: 25px;">
+                                      {$cdkey_information['agent_notused']}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-5 offset-sm-2">
+                              <div class="os-progress-bar primary">
+                                <div class="bar-labels">
+                                  <div class="bar-label-left">
+                                    <span>激活率</span><span class="positive" style="color: #e65252;">{$cdkey_information['agent_ratio']}</span>
+                                  </div>
+                                  <div class="bar-label-right">
+                                    <span class="info">{$cdkey_information['agent_used']}/{$cdkey_information['agent_total']}</span>
+                                  </div>
+                                </div>
+                                <div class="bar-level-1" style="width: 100%">
+                                 <div class="bar-level-2" style="width: {$cdkey_information['agent_ratio']}"> 
+                                 <!--    <div class="bar-level-3" style="width: 42%"></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--END - Projects list-->
+                  </div>
+                </div>
+                <div class="col-lg-5 b-l-lg">
+                  <div class="padded-lg">
+                    <!--START - Projects Statistics-->
+                    <div class="element-wrapper">
+                  
+                      <h6 class="element-header">
+                        系统激活码使用情况
+                      </h6>
+                      <div class="element-box">
+                        <div class="padded m-b">
+                          <div class="centered-header">
+                            <h6>
+                              概况（所有人）
+                            </h6>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 b-r b-b">
+                              <div class="el-tablo centered padded-v-big highlight bigger">
+                                <div class="label">
+                                  已使用
+                                </div>
+                                <div class="value" style="font-size: 1rem;  color: #e65252;">
+                                  {$cdkey_information['overview_used']}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6 b-b">
+                              <div class="el-tablo centered padded-v-big highlight bigger">
+                                <div class="label">
+                                  未使用
+                                </div>
+                                <div class="value" style="font-size: 1rem;">
+                                  {$cdkey_information['overview_notused']}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="padded m-b">
+                          <div class="centered-header">
+                            <h6>
+                              详细（所有人）
+                            </h6>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>体验</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['experience_details_used_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['experience_details_used']}/{$cdkey_information['experience_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['experience_details_used_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>一月</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['one_month_details_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['one_month_details_used']}/{$cdkey_information['one_month_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['one_month_details_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>半年</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['half_a_year_details_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['half_a_year_details_used']}/{$cdkey_information['half_a_year_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['half_a_year_details_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>一年</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['one_year_details_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['one_year_details_used']}/{$cdkey_information['one_year_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['one_year_details_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>永久</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['permanent_details_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['permanent_details_used']}/{$cdkey_information['permanent_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['permanent_details_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="os-progress-bar primary">
+                            <div class="bar-labels">
+                              <div class="bar-label-left">
+                                <span>代理</span><span class="positive" style="color: #e65252;">激活率：{$cdkey_information['agent_details_ratio']}</span>
+                              </div>
+                              <div class="bar-label-right">
+                                <span class="info">{$cdkey_information['agent_details_used']}/{$cdkey_information['agent_details_total']}</span>
+                              </div>
+                            </div>
+                            <div class="bar-level-1" style="width: 100%">
+                              <div class="bar-level-2" style="width: {$cdkey_information['agent_details_ratio']}">
+                              <!--  <div class="bar-level-3" style="width: 25%"></div> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--END - Projects Statistics-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+<script type="text/javascript">
+function dosubmit(){
+    //获取表单提交按钮
+    var btnSubmit = document.getElementById("submit");
+    //将表单提交按钮设置为不可用，这样就可以避免用户再次点击提交按钮
+    btnSubmit.disabled= "disabled";
+ // 	submit.innerHTML=("处理中");
+  	document.getElementById("buttonid").click();
+    //返回true让表单可以正常提交
+    return true;
+}
+
+</script>
+
+
+
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+           <!-- <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>-->
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                正在处理中……
+              </h4>
+              <div class="onboarding-text">
+                请耐心等待！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,97 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      返佣记录
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th  class="text-center">
+                                获取者
+                              </th>
+                              <th  class="text-center">
+                                提供者
+                              </th>
+                              <th  class="text-center">
+                                说明
+                              </th>
+                              <th  class="text-center">
+                                金额
+                              </th>
+                              <th  class="text-center">
+                                时间
+                              </th>
+                              <th class="row-actions">
+                                详情
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="rebate_list" id="vo"}  
+                            <tr>
+                              <td class="text-center">
+                                <span class="smaller lighter">{$vo['id']}</span>
+                              </td>
+                              <td  class="text-center">
+                                 <div class="smaller lighter">
+                                 {$vo['get_id']}
+                                </div>
+                              </td>
+                              <td  class="text-center">
+                                <div class="smaller lighter">
+                                 {$vo['give_id']}
+                                </div>
+                              </td>
+                              <td  class="text-center">
+                                <span class="smaller lighter">{$vo['info']}</span>
+                              </td>
+                              <td  class="text-center"> 
+                                <div class="value badge badge-pill badge-primary">¥ {$vo['money']} </div>
+                                
+                              </td>
+                              <td class="text-center">
+                                <span class="smaller lighter"> <?php echo  date('Y-m-d H:i:s',$vo['time']); ?></span>
+                              </td>
+
+                              <td class="row-actions">
+                                <a class="primary" href="<?php echo url('rebate/rebate_details'); ?>?application_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"  target="_blank"><i class="os-icon os-icon-agenda-1"></i></a>
+                              </td>
+                            </tr>
+                           
+                            
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$rebate_list->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+              
+
+               
+              <div class="floated-chat-btn" onclick="window.location.href = '<?php echo url('rebate/withdrawals_record'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'">
+
+                <span><i class="os-icon os-icon-tasks-checked"></i><span>提现记录</span></span>
+
+              </div>
+              
+              
+            </div>
+          </div>

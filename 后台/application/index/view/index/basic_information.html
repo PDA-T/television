@@ -1,0 +1,445 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material"   role="form" id="form1" method="post" action="{:url('index/basic_information')}" >
+          <h5 class="form-header">
+            基础信息
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交. 
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+          
+          
+          
+
+          <!--<div class="form-group">
+            <label for=""> APP名称</label><input class="form-control" data-error="Your email address is invalid" placeholder="Enter email" required="required" type="email">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>--->
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > APP名称</label><input class="form-control"  placeholder="Confirm Name" required="required" type="text"  value="{:advert('21')}"  name="app_name" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label >域名</label><input class="form-control" placeholder="Confirm Domain Name" required="required" type="text"  value="{:advert('30')}"  name="domain_name" >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 积分兑换会员</label><input class="form-control"  placeholder="Confirm Integral" required="required" type="number"  value="{:advert('4')}"  name="sign" >
+                <div class="help-block form-text text-muted form-control-feedback">
+                  多少积分兑换一天VIP
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">体验时间</label><input class="form-control"  placeholder="Confirm Time" required="required" type="number"   value="{:advert('5')}"  name="time" >
+               <!--<div class="help-block form-text with-errors form-control-feedback">124</div>-->
+                   <div class="help-block form-text text-muted form-control-feedback"> 注册会员后默认赠送的会员时间 单位：分钟</div>
+              </div>
+            </div>
+          </div>
+          
+            <div class="row">
+
+             <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        签到积分随机范围 最低
+                      </div>
+                    </div>
+                    <input class="form-control" type="number" name="sign_down" value="{:advert('2')}">
+                  </div>
+            </div>
+            <div class="col-sm-6">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        签到积分随机范围 最高
+                      </div>
+                    </div>
+                    <input class="form-control" type="number" name="sign_pass" value="{:advert('3')}">
+                  </div>
+            </div>
+          </div>   
+          
+          <br>
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 邀请赠送积分</label><input class="form-control"  placeholder="Confirm Integral" required="required" type="number"  value="{:advert('34')}"  name="Invitation_points" >
+                <div class="help-block form-text text-muted form-control-feedback">
+                  邀请一个有效用户 赠送积分数
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">首页推荐视频调用数量</label><input class="form-control"  placeholder="Confirm Num" required="required" type="number"   value="{:advert('45')}"  name="index_video_num" >
+               <!--<div class="help-block form-text with-errors form-control-feedback">124</div>-->
+                   <div class="help-block form-text text-muted form-control-feedback"> 尽量为3的倍数 不宜太高</div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 客服微信 </label><input class="form-control"  placeholder="Confirm WeChat" required="required" type="text"  value="{$wechat}"  name="wechat" >
+                <div class="help-block form-text text-muted form-control-feedback">
+                  代理也可以设置客服微信，APP中代理未设置时显示管理员的，代理设置后显示代理的；<br>所有代理都显示管理员的；
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">升级代理赠送体验金额</label><input class="form-control"  placeholder="Confirm Money" required="required" type="number"   value="{:advert('20')}"  name="agent_default_money" >
+               <!--<div class="help-block form-text with-errors form-control-feedback">124</div>-->
+                   <div class="help-block form-text text-muted form-control-feedback"> 赠送金额不可提现 （ 仅允许佣金提现 ）</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 单点登录 / 封号（*10）检测频率（毫秒） </label><input class="form-control"  placeholder="Confirm Mumber" required="required" type="number"  value="{:advert('66')}"  name="SingleSignOnRate" >
+                   <div class="help-block form-text text-muted form-control-feedback"> 最低1分钟 也就是60000毫秒，低于1分钟按1分钟计算</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 接口安全阈值 (基础安全规则)</label><input class="form-control"  placeholder="Confirm Num" required="required" type="text"  value="{:advert('68')}"  name="safety_threshold" >
+                <div class="help-block form-text text-muted form-control-feedback">  大于30 小于43200 ; APP频繁出现Key验证失败 可以略微调高!（ 过高时请开启安全防护 ）</div>
+              </div>
+            </div>
+
+          </div>
+
+              
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label > 代理管理PC端检索激活码请求频率 (每小时) </label><input class="form-control"  placeholder="Confirm Mumber" required="required" type="number"  value="{:advert('126')}"  name="cdkey_search_frequency" >
+                   <div class="help-block form-text text-muted form-control-feedback"> 设置过高可能带来未知安全风险 </div>
+              </div>
+            </div>
+
+
+          </div>
+          
+           <div class="row">
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label > 邀请广告语 </label><input class="form-control"  placeholder="Confirm AD" required="required" type="text"  value="{:advert('67')}"  name="advertising_slogan" >
+              </div>
+            </div>
+
+          </div>         
+          <!--
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       APP与服务器连接失败 管理员提示
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="connection_failed_tips" value="{:advert('83')}">
+                  </div>        
+            </div>     
+          </div>
+            -->
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       默认用户头像
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="DefaultLogo" value="{:advert('114')}">
+                  </div>        
+            </div>     
+          </div>
+          
+              <br> 
+          <div class="row">
+            <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       会员中心代理介BANNER
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="User_AgentIntroductionBanner" value="{:advert('115')}">
+                  </div>        
+            </div>   
+          </div>    
+          
+          
+              <br> 
+          <div class="row">
+            <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       代理介绍图片
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="agent_introduction_picture" value="{:advert('111')}">
+                  </div>        
+            </div>     
+          </div>
+            
+              <br>
+
+
+            <div class="row">
+            <div class="col-sm-12">
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       SM.MS图库 API Access
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="Sm_Authorization" value="{:advert('35')}">
+                  </div>        
+            </div>     
+          </div>
+            
+              <br> 
+
+          
+          
+          <fieldset class="form-group">
+            <legend><span>Site Information</span></legend>
+            
+
+			<div class="form-group">
+            <label for=""> Ios 下载地址</label><input class="form-control" data-error="请输入下载地址" placeholder="Enter Url"  type="text" value="{:advert('22')}"  name="app_ios_down">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+			<div class="form-group">
+            <label for=""> Android 下载地址</label><input class="form-control" data-error="请输入下载地址" placeholder="Enter Url" required="required" type="text" value="{:advert('23')}"  name="app_android_down">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label for=""> Android Apk 地址</label><input class="form-control" data-error="请输入APK文件下载地址" placeholder="Enter Url" required="required" type="text" value="{:advert('24')}"  name="app_android_apk_down">
+            <div class="help-block form-text with-errors form-control-feedback">用于APP更新</div>
+          </div>
+            
+            <!--   <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for=""> First Name</label><input class="form-control" data-error="Please input your First Name" placeholder="First Name" required="required" type="text">
+                  <div class="help-block form-text with-errors form-control-feedback"></div>
+                </div>
+              </div>
+              
+              
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="">Last Name</label><input class="form-control" data-error="Please input your Last Name" placeholder="Last Name" required="required" type="text">
+                  <div class="help-block form-text with-errors form-control-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for=""> Date of Birth</label><input class="single-daterange form-control" placeholder="Date of birth" type="text" value="04/12/1978">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="">Twitter Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        @
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="Twitter Username" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+       <div class="form-group">
+            <label for=""> Regular select</label><select class="form-control">
+              <option value="New York">
+                New York
+              </option>
+              <option value="California">
+                California
+              </option>
+              <option value="Boston">
+                Boston
+              </option>
+              <option value="Texas">
+                Texas
+              </option>
+              <option value="Colorado">
+                Colorado
+              </option>
+            </select>
+          </div>-->
+            
+
+            <div class="form-group">
+              <label> 搜索推荐关键词</label><textarea class="form-control" rows="3"   name="Hot_search">{:advert('300')}</textarea>
+              <div class="help-block form-text with-errors form-control-feedback">多个关键词用 , 隔开</div>
+            </div>
+
+              <!--
+            <div class="form-group">
+              <label> 特权影视区域调用X5</label><textarea class="form-control" rows="3"  name="tencent_x5">{:advert('121')}</textarea>
+              <div class="help-block form-text with-errors form-control-feedback">多个域名用 , 隔开</div>
+            </div>
+              -->
+
+              <div class="form-group">
+                  <label> 代理公告内容：（PC管理后台/APP代理中心）</label><textarea class="form-control" rows="3"  name="agent_bulletin">{:advert('44')}</textarea>
+              </div>
+            
+            <div class="form-group">
+              <label> 免责声明</label><textarea class="form-control" rows="3"  name="exemption_from_declaration">{:advert('112')}</textarea>
+              <div class="help-block form-text with-errors form-control-feedback">会员中心显示</div>
+            </div>
+
+
+          </fieldset>
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 确认</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div><!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>

@@ -1,0 +1,285 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile compact">
+
+
+
+      
+      
+	<div class="up-head-w" style="height: 750px; background-image:url({$poster_data['img']})" >
+              <div class="up-social">
+          
+                    <a href="#" class="">
+                      <i class="os-icon os-icon-mail-07 up-sub-header"  data-title="当前图片高宽" data-toggle="tooltip" id="natural"> 0</i> 
+                </a>
+         
+          
+        </div>
+        <div class="up-main-info">
+          <h2 class="up-header">
+            海报
+          </h2>
+          <h6 class="up-sub-header">
+            {$poster_data['name']}
+          </h6>
+        </div>
+   </div>
+
+
+      
+      
+      
+    </div>
+
+  </div>
+  <div class="col-sm-7">
+    <div class="element-wrapper">
+      <div class="element-box">
+         <form class="form-material"   role="form" id="form1" method="post" action="{:url('poster/edit')}" >
+          <div class="element-info">
+            <div class="element-info-with-icon">
+              <div class="element-info-icon">
+                <div class="os-icon os-icon-documents-07"></div>
+              </div>
+              <div class="element-info-text">
+                <h5 class="element-inner-header">
+                  海报编辑
+                </h5>
+                <div class="element-inner-desc">
+                   <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+     
+
+
+        
+ 
+  
+          <div class="row">
+            
+            <div class="col-sm-12">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       主题
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="poster_name" value="{$poster_data['name']}">
+                  </div>             
+              
+            </div>            
+               
+
+          </div>
+            
+              <br> 
+
+          <div class="row">
+            
+            <div class="col-sm-12">
+              
+               	<div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                       海报地址
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="poster_img" value="{$poster_data['img']}">
+                  </div>             
+              
+            </div>            
+               
+
+          </div>
+            
+           
+           
+
+           
+           
+           
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <input type="hidden" name="edit_id"  id="edit_id"  value="{$poster_data['id']}" >
+
+            
+	
+            <button class="btn btn-primary " type="submit"> 确认</button>
+
+
+            <span class="btn btn-danger "  onclick="window.open(' <?php echo url('poster/del'); ?>?del_id={$poster_data['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')"  style=" float: right; "> 删除</span>
+              
+            
+            
+            
+            
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+              
+              
+
+         
+              
+              
+              
+              
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <!--------------------
+              START - Support Agents
+              -------------------->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-box-tp">
+  				{volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                   {/volist} 
+                </div>
+              </div>
+
+          </div>
+
+
+
+
+  <script src="/public/static/v4/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+            $("#ad_content").hide();
+            $("#ad_audit").change(function() {
+                if($(this).val() == 3 ) {
+                    $("#ad_content").show();
+                } else{
+                    $("#ad_content").hide();
+                }
+            })
+        })
+ </script>
+
+
+  
+               
+
+
+<img id="image" src="{$poster_data['img']}" style="display:none;" width="1" height="1" />
+<script>
+			window.onload = function(){
+				var image = document.getElementById("image");
+              	document.getElementById("natural").innerHTML = "当前上传图片 高："+ image.naturalHeight + "px 宽："+ image.naturalWidth+ "px ";
+				//alert("原始宽度："+image.naturalWidth);
+				//alert("原始高度:"+image.naturalHeight);
+				//console.log("宽："+image.width);
+				//console.log("高："+image.height);
+			}
+</script>
+	 
+  
+  
+  
+
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+
+
+
+
+
+
+
+
+
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

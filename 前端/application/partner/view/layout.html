@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>{:Ryan_name()}   - 合伙人管理后台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Admin Dashboard Template">
+    <meta name="keywords" content="admin,dashboard">
+    <meta name="author" content="stacks">
+    <!-- Ryan GOX718 -->
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Theme Styles -->
+    <link href="/public/static/v4/partner/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/static/v4/partner/all.min.css" rel="stylesheet">
+    <link href="/public/static/v4/partner/lime.min.css" rel="stylesheet">
+    <link href="/public/static/v4/partner/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="lime-sidebar">
+    <div class="lime-sidebar-inner slimscroll">
+        <ul class="accordion-menu">
+            <li class="sidebar-title">
+                合伙人管理
+            </li>
+            <li>
+                <a href="{:url('partner/index/index')}"><i class="material-icons">dashboard</i>仪表盘</a>
+            </li>
+
+            <li class="sidebar-title">
+                激活码管理
+            </li>
+            <li>
+                <a href="{:url('partner/cdkey/index')}"><i class="material-icons">bookmark_border</i>提取</a>
+
+
+                <a href="{:url('partner/cdkey/log')}"><i class="material-icons">cloud_queue</i>记录</a>
+                <a href="{:url('partner/cdkey/retrieval')}"><i class="material-icons">done_all</i>检索</a>
+
+            </li>
+
+<!--
+            <li class="sidebar-title">
+                用户管理
+            </li>
+
+            <li>
+                <a href="#"><i class="material-icons">access_time</i>暂未开放</a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div class="lime-header">
+    <nav class="navbar navbar-expand-lg">
+        <section class="material-design-hamburger navigation-toggle">
+            <a href="javascript:void(0)" class="button-collapse material-design-hamburger__icon">
+                <span class="material-design-hamburger__layer"></span>
+            </a>
+        </section>
+        <a class="navbar-brand" href="{:url('partner/index/index')}">{:Ryan_name()} </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="material-icons">keyboard_arrow_down</i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="form-inline my-2 my-lg-0 search">
+                <input class="form-control mr-sm-2"  placeholder=" {:name()} 欢迎回来！" >
+            </div>
+            <ul class="navbar-nav ml-auto">
+                <!--  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle theme-settings-link" href="#">
+                          <i class="material-icons">layers</i>
+                      </a>
+                  </li>-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <!--  <li><a class="dropdown-item" href="#">Account</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li class="divider"></li> --->
+                        <li><a class="dropdown-item" href="{:url('partner/index/loginout')}">退出登录</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+
+
+{__CONTENT__}           <!-- 调用index/下的文件 -->
+
+
+<div class="lime-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="footer-text"><?php echo date("Y"); ?> © PNS</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function dosubmit(){
+        //获取表单提交按钮
+        var btnSubmit = document.getElementById("submit");
+        //将表单提交按钮设置为不可用，这样就可以避免用户再次点击提交按钮
+        btnSubmit.disabled= "disabled";
+        // 	submit.innerHTML=("处理中");
+        document.getElementById("buttonid").click();
+        //返回true让表单可以正常提交
+        return true;
+    }
+
+</script>
+
+<!-- Javascripts -->
+<script src="/public/static/v4/partner/jquery-3.1.0.min.js"></script>
+<script src="/public/static/v4/partner/popper.min.js"></script>
+<script src="/public/static/v4/partner/bootstrap.min.js"></script>
+<script src="/public/static/v4/partner/jquery.slimscroll.min.js"></script>
+<script src="/public/static/v4/partner/chart.min.js"></script>
+<script src="/public/static/v4/partner/apexcharts.min.js"></script>
+<script src="/public/static/v4/partner/lime.min.js"></script>
+<script src="/public/static/v4/partner/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+<div class="lime-container">
+    <div class="lime-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card bg-info text-white">
+                        <div class="card-body">
+                            <div class="dashboard-info row">
+                                <div class="info-text col-md-6">
+                                    <?php if(advert('44') !== null && advert('44') !== ''){ ?>
+                                    <h5 class="card-title">公告：</h5>
+                                    <p>{:advert('44')}.</p>
+                                    <?php  }?>
+                                    <ul>
+                                        <li>禁止有损平台形象的行为；</li>
+                                        <li>禁止影响平台正常运行的行为；</li>
+                                        <li>禁止通过自非正常手段获取下级用户的行为；</li>
+                                    </ul>
+                                    <a href="#" class="btn btn-warning m-t-xs">可用余额：{$money} 元</a>
+                                    <a href="/partner/cdkey/index" class="btn btn-dark m-t-xs">生成激活码</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="">
+                                <div class="">
+                                    <h5 class="card-title">账户概况：</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">绑定下级用户：{$user_count} 人</li>
+                                        <li class="list-group-item">共有激活码：{$all_Activation_code} 张</li>
+                                        <li class="list-group-item">已用激活码：{$yy_Activation_code} 张</li>
+                                        <li class="list-group-item">剩余激活码：{$wy_Activation_code} 张</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-warning m-b-lg" role="alert">
+                        合伙人 <b> {:name()} </b>您好！ 如出现以上违规禁止行为，{:Ryan_name()}官方有权进行封号处理，对账号接管与数据迁移，如屡教不改者加入黑名单永不解封。
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h5 class="card-title">体验</h5>
+                            <h2 class="float-right">{$experience_activation_code}</h2>
+                            <p>使用率：{$experience_activation_code_proportion} %</p>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {$experience_activation_code_proportion}%" aria-valuenow="{$experience_activation_code_proportion}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h5 class="card-title">一月</h5>
+                            <h2 class="float-right">{$one_month_activation_code}</h2>
+                            <p>使用率：{$one_month_activation_code_proportion} %</p>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {$one_month_activation_code_proportion}%" aria-valuenow="{$one_month_activation_code_proportion}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h5 class="card-title">半年</h5>
+                            <h2 class="float-right">{$half_a_year_activation_code}</h2>
+                            <p>使用率：{$half_a_year_activation_code_proportion} %</p>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {$half_a_year_activation_code_proportion}%" aria-valuenow="{$half_a_year_activation_code_proportion}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h5 class="card-title">一年</h5>
+                            <h2 class="float-right">{$year_activation_code}</h2>
+                            <p>使用率：{$year_activation_code_proportion} %</p>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {$year_activation_code_proportion}%" aria-valuenow="{$year_activation_code_proportion}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h5 class="card-title">永久</h5>
+                            <h2 class="float-right">{$permanent_activation_code}</h2>
+                            <p>使用率：{$permanent_activation_code_proportion} %</p>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {$permanent_activation_code_proportion}%" aria-valuenow="{$permanent_activation_code_proportion}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">最近10次 激活码生成记录</h5>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">类型</th>
+                                        <th scope="col">数量</th>
+                                        <th scope="col">费用</th>
+                                        <th scope="col">时间</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="cdkey_log_list" id="cdkey_log_list"}	
+                                    <tr>
+                                        <td>{$cdkey_log_list['id']}</td>
+                                        <td>{$cdkey_log_list['name']}</td>
+                                        <td>{$cdkey_log_list['number']}</td>
+                                        <td>¥ {$cdkey_log_list['money']}</td>
+                                        <td><?php echo  date('Y-m-d H:i:s',$cdkey_log_list['time']); ?></td> 
+                                        <td><span style='cursor: pointer' class="badge badge-primary"  onclick="window.open('/partner/cdkey/list_details?k={$cdkey_log_list['id']}&i={$cdkey_log_list['uid']}&t={$Ryan_time}&r={$Ryan_key}')">详情</span></td>
+                                    </tr>
+                                    {/volist} 
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">近期被使用激活码</h5>
+                            <div class="social-media-list">
+                            	
+          					 {volist name="cdkey_list" id="cdkey_list"}
+                              <div class="social-media-item">
+                                    <div class="social-text">
+                                        <p>{$cdkey_list['cdkey']}  - 使用者：{$cdkey_list['yid']}</p>
+                                        <span>使用时间：<?php echo  date('Y-m-d H:i:s',$cdkey_list['stime']); ?></span>
+                                    </div>
+                                </div>
+                        	 {/volist}                         	
+  
+                                
+                              
+                                <div class="social-media-item">
+                                 
+                                        <span>· · · · · ·</span>
+                                </div>
+                              <!--    <div class="social-media-item">
+                                    <div class="social-text">
+                                        <p>To improve is to change; to be perfect is to change often...</p>
+                                        <span>12 October, 2019</span>
+                                    </div>
+                                </div>
+                                <div class="social-media-item">
+                                    <div class="social-text">
+                                        <p>If you're going through hell, keep going...</p>
+                                        <span>29 September, 2019</span>
+                                    </div>
+                                </div>
+                                <div class="social-media-item">
+                                    <div class="social-text">
+                                        <p>If you're going through hell, keep going...</p>
+                                        <span>29 September, 2019</span>
+                                    </div>
+                                </div>
+                                -->
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+

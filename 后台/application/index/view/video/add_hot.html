@@ -1,0 +1,217 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile compact">
+      <div class="up-head-w" style="background-image:url(/public/static/v4/img/portfolio15.jpg)">
+        <div class="up-social">
+          <a href="#" style="font-size: 15px;"><i class="os-icon os-icon-window-content"></i> 已有影片: {$video_hot_count}</a>
+        </div>
+        <div class="up-main-info">
+          <h2 class="up-header">
+            添加推荐热门影片
+          </h2>
+          <h6 class="up-sub-header">
+            Add Recommended Movies
+          </h6>
+        </div>
+        <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
+      </div>
+
+      <div class="up-contents">
+        <div class="m-b">
+          <div class="padded" style="font-size: 0.63rem;color: rgba(0, 0, 0, 0.4);">
+            <div class="os-progress-bar primary">
+              <div class="bar-labels">
+                <div class="bar-label-left">
+                  <span>帮助：</span>
+                </div>
+              </div>
+              
+              <span>支持格式：MP4 M3U8；</span><br><br>
+              <span>如何添加多资源？</span><br>
+              <span>格式： 来源1$播放地址1;来源2$播放地址2;</span><br>
+              <span>例：(3资源)</span><br><br>
+              <span>牛郎星$https://a.com/a.mp4;织女星$https://b.com/b.m3u8;比邻星$https://c.com/c.m3u8</span><br><br>
+              <span>来源或名字和播放地址之间用"$"符分割；</span><br>
+              <span>两个资源之间用";"符分割；</span><br><br>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+              
+              
+              
+  <div class="col-sm-7">
+    <div class="element-wrapper">
+      <div class="element-box">
+            <form class="form-material"   role="form" id="form1" method="post" action="{:url('video/add_hot')}" >
+          
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        标题
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="Enter Title" required="required" type="text"  name="video_title">
+                  </div>
+                </div>
+          
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        图片
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="Enter Img" required="required" type="text" name="video_img">
+                  </div>
+                </div>
+          
+          
+          
+          <div class="row">
+
+                <div class="col-sm-6">
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        类型
+                      </div>
+                    </div>
+                    
+                  <select class="form-control"  name="video_type">
+                  <option value="动作">动作</option>
+                  <option value="奇幻">奇幻</option>
+                  <option value="喜剧">喜剧</option>
+                  <option value="恐怖">恐怖</option>
+                  <option value="冒险">冒险</option>
+                  <option value="爱情">爱情</option>
+                  <option value="警匪">警匪</option>
+                  <option value="科幻">科幻</option>
+                  <option value="战争">战争</option>
+                  <option value="灾难">灾难</option>
+                  <option value="温情">温情</option>
+                  <option value="悬疑">悬疑</option>
+                  <option value="纪录">纪录</option>
+                  <option value="微电影">微电影</option>
+                  <option value="微动画电影">微动画电影</option>
+                  </select>
+                    
+                  </div>
+                </div>
+              </div>  
+            
+            
+
+                <div class="col-sm-6">
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        地区
+                      </div>
+                    </div>
+                    <input class="form-control" placeholder="Enter Region" required="required" type="text" name="video_region">
+                  </div>
+                </div>
+              </div>  
+            
+          </div>
+
+
+
+            <div class="form-group"><textarea class="form-control" placeholder="简介" rows="5"  name="video_content"></textarea></div>
+
+            <div class="form-group"><textarea class="form-control" placeholder="播放地址 支持多资源 格式： Nane_1$url_1;Nane_2$url_2;Nane_3$url_3  " rows="10"  name="video_url"></textarea> </div>
+
+
+          <div class="form-buttons-w">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <button class="btn btn-primary disabled" type="submit"> 确定 </button> <span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; "></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            
+            
+          </div>
+
+
+
+
+
+
+
+  
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

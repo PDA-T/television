@@ -1,0 +1,317 @@
+<div class="content-i">
+            <div class="content-box">
+            	
+            	<div class="row">
+
+<div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+        <form class="form-material" role="form" id="form1" method="post" action="/index/skin/one.html">
+          <h5 class="form-header">
+            模板选择 - 首页
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内填写完毕提交.
+          </div>
+          
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+          
+          
+          <div class="row">
+
+
+
+              <div class="col-sm-6">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                  模板编号
+                              </div>
+                          </div>
+
+                          <select class="form-control"   name="skin_id">
+
+                              <option value="0">
+                                  请选择模板编号
+                              </option>
+                              <option value="3101">
+                                  INDEX_ONE
+                              </option>
+                              <option value="3102">
+                                  INDEX_TWO
+                              </option>
+
+                          </select>
+
+                      </div>
+              </div>
+
+
+
+           <div class="col-sm-6">
+                   <div class="input-group">
+                       <div class="input-group-prepend">
+                           <div class="input-group-text">
+                               APPID
+                           </div>
+                       </div>
+                       <input class="form-control" type="text" disabled="disabled" value="{$appid}">
+                   </div>
+               </div>
+           </div>
+                        
+
+             
+          <fieldset class="form-group">
+            <legend><span>授权码</span></legend>
+
+
+              <div class="row">
+              <div class="col-sm-12">
+                  <textarea class="form-control" rows="4" name="skin_key"  placeholder="请输入授权码... "></textarea>
+
+              </div>
+
+      </div>
+
+
+          </fieldset>
+
+
+
+
+
+
+          <div class="form-buttons-w">
+              <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+              <button class="btn btn-primary " type="submit"> 提交授权</button><span id="timer" style=" margin-left: 10px; color: #999; font-size: 10px; ">离本次会话超时还剩4分35秒</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+            		</div>
+
+
+
+
+
+
+
+            	<div class="row">
+
+            		<div class="col-sm-3">
+    <div class="user-profile compact">
+        <br>
+      <div align="center" >
+      	<img src="{$skin['img_index_one']}" class="img-responsive"  style="display: inline-block; height: auto; max-width: 100%;">
+
+
+      </div>
+      <div class="up-controls">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="value-pair">
+              <div class="label">
+                模板编号：INDEX_ONE
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+
+
+              <?php if($skin['is_index_one'] == 1){?>
+              <a class="btn btn-primary btn-sm" href="<?php echo url('skin/skin_use'); ?>?skin_id=3101&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-crown"></i>  使用</a>
+              <?php } else{  ?>
+              <div class="value badge badge-pill badge-success">  不可用    </div>
+              <?php } ?>
+            
+            
+          </div>
+        </div>
+      </div>
+
+        <?php if($skin['is_index_one'] == 0){?>
+            <div class="form-group">
+            <textarea class="form-control" rows="5" name="appKey">识别码：{$skin['distinguish_index_one']}</textarea>
+            </div>
+        <?php } ?>
+
+
+      
+    </div>
+  </div>
+
+
+
+
+                    <div class="col-sm-3">
+                        <div class="user-profile compact">
+                            <br>
+                            <div align="center" >
+                                <img src="{$skin['img_index_one']}" class="img-responsive"  style="display: inline-block; height: auto; max-width: 100%;">
+
+
+                            </div>
+                            <div class="up-controls">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="value-pair">
+                                            <div class="label">
+                                            模板编号：INDEX_TWO
+                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+
+
+                                        <?php if($skin['is_index_two'] == 1){?>
+
+                                                <?php if($skin['is_index_two'] == 1){?>
+                                                <span class="btn btn-primary btn-sm"><i class="os-icon os-icon-crown"></i>  使用</span>
+                                                <?php } else{  ?>
+                                                <span class="badge badge-danger" data-title="未经许可" data-toggle="tooltip" data-original-title="" title=""><i class="os-icon os-icon-others-43"></i>  未授权</span>
+                                                <?php } ?>
+
+                                        <?php } else{  ?>
+                                         <span class="badge badge-danger" data-title="未经许可" data-toggle="tooltip" data-original-title="" title=""><i class="os-icon os-icon-others-43"></i>  未授权</span>
+                                        <?php } ?>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="appKey">识别码：{$skin['distinguish_index_two']}</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+              
+              
+
+         
+              
+              
+              
+              
+            </div>
+
+
+  <script src="/public/static/v4/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+            $("#ad_content").hide();
+            $("#ad_audit").change(function() {
+                if($(this).val() == 3 ) {
+                    $("#ad_content").show();
+                } else{
+                    $("#ad_content").hide();
+                }
+            })
+        })
+ </script>
+
+
+
+  
+  
+
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+
+
+
+
+
+
+
+
+
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

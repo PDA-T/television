@@ -1,0 +1,126 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <!--START - Transactions Table-->
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  代理列表
+                </h6>
+                <div class="element-box-tp">
+                  <div class="table-responsive">
+                    <table class="table table-padded">
+                      <thead>
+                        <tr>
+                          <th>
+                            Status
+                          </th>
+                          <th>
+                            Account
+                          </th>
+                          <th>
+                            Last Login Time
+                          </th>
+                          <th>
+                            Login Num
+                          </th>
+                          <th>
+                            More Data
+                          </th>
+                          <th class="text-center">
+                            VIP Time
+                          </th>
+                          <th  class="text-right">
+                            Come From
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                     {volist name="user_list" id="vo"}                          
+                        <tr onclick="window.open('edit?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                          <td class="nowrap">
+                            <span class="smaller lighter red">{$vo['id']}</span> 
+                            
+                            
+                            <?php  if($vo['status']=='1') {  ?>
+                            	 <div class="status-pill green" data-title="正常" data-toggle="tooltip" ></div>
+                            <?php }else{  ?>
+                           		 <div class="status-pill red" data-title="已禁封" data-toggle="tooltip" ></div>
+                            <?php }  ?>    
+                            
+                            
+                            
+                          </td>
+                          <td class="cell-with-media ">
+                            
+                            <div class="cell-image-list">
+                                  <div class="cell-img" style="height: 25px;width: 25px; margin-right: 10px; background-image: url(/public/static/v4/img/Ryan.png)" ></div>
+                                </div>
+                            <span >{$vo['username']}</span>
+                            
+                          </td>   
+                          
+                          
+                          <td>
+                            
+                            <?php  if($vo['logintime']=='0') {  ?>
+                             <span class="smaller lighter">未登录</span>
+                            <?php }else{  ?>
+                            <span><?php echo  date('Y-m-d',$vo['logintime']); ?></span><span class="smaller lighter"><?php echo  date('H:i:s',$vo['logintime']); ?></span>
+                            <?php }  ?>
+                            
+                            
+                          </td>
+                          <td>
+                            <span class="smaller lighter">{$vo['count']}</span>
+                          </td>
+
+                           <td class="bolder nowrap">
+                            
+                            <div class="cell-image-list">
+                               <?php if($vo['tx']=='1') { echo '<div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/CashOut.gif)"  data-title="正在提现" data-toggle="tooltip" ></div>'; } ?>
+                               <?php if(!empty($vo['weichat'])) { echo '<div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/WeChat.png)"  data-title="微信客服已设置" data-toggle="tooltip" > </div>'; } ?>
+                               <?php if(!empty($vo['phone'])) { echo '<div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/mobilephone.png)"  data-title="手机已设置" data-toggle="tooltip"  ></div>'; } ?>
+                               <?php if(!empty($vo['zfb'])) { echo '<div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/alipay.png)"  data-title="支付宝已设置" data-toggle="tooltip" ></div>'; } ?>
+                               <?php if(!empty($vo['safetycode'])) { echo ' <div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/safetycode.png)"  data-title="安全码已设置" data-toggle="tooltip" ></div>'; } ?>
+                               <?php if(!empty($vo['email'])) { echo '<div class="cell-img" style="height: 20px;width: 20px; margin-right: 10px; background-image: url(/public/static/v4/img/email.png)"  data-title="邮箱已设置" data-toggle="tooltip" ></div>'; } ?>
+                              
+                                </div>
+                            
+                          </td>
+                          <td class="text-center">
+                                <?php
+                                if($vo['type']=='1'){
+                                	echo '<span class="badge badge-secondary"><i class="os-icon os-icon-crown"></i>  永久会员</span>';
+                                }else{
+                                    if($vo['lasttime']=='0'){
+                                            echo '<span class=" btn btn-Danger btn-xs  ">未充值</span>';
+                                        }elseif($vo['lasttime']<time()){
+                                            echo ' <span class="badge badge-danger"  data-title="过期于 '.date('Y年m月d日 H:i:s',$vo['lasttime']).'" data-toggle="tooltip" ><i class="os-icon os-icon-others-43"></i>  会员过期</span>';
+                                    }else{
+                                         echo '<span class="badge badge-primary"  data-title="将于 '.date('Y年m月d日',$vo['lasttime']).' 过期" data-toggle="tooltip" ><i class="os-icon os-icon-ui-02"></i>  超级会员</span>';
+                                    }
+                                }
+
+                                ?>
+                            
+
+                          </td>
+                          <td class="text-right bolder nowrap">
+                            <span class="smaller lighter">{$vo['Source']}</span>
+                          </td>
+
+                        </tr>
+                        
+                        
+                        
+						{/volist} 
+                            
+                        </tbody>
+                       </table> 
+                        {$user_list->render()}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

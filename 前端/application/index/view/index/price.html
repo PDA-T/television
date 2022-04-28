@@ -1,0 +1,151 @@
+<div class="content-i">
+            <div class="content-box"><div class="row">
+  <div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+
+
+          <h5 class="form-header">
+            价格 / 发卡设置
+          </h5>
+
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+          
+          
+         <div class="element-box-tp">
+                  <div class="table-responsive">
+                    <table class="table table-padded">
+                      <thead>
+                        <tr>
+                          <th>
+                            类型
+                          </th>
+                          <th>
+                            简介
+                          </th>
+                          <th>
+                            购卡地址
+                          </th>
+                          <th class="text-center">
+                            操作
+                          </th>
+                          <th class="text-right">
+                            显示价格
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {volist name="cdkey_type_list" id="cdkey_type_list"}
+                        <tr>
+                          <td class="nowrap">
+                            <span class="status-pill smaller yellow"></span><span>{$cdkey_type_list['name']}</span>
+                          </td>
+                          <td>
+                            <span class="smaller lighter">{$cdkey_type_list['content']}</span>
+                          </td>
+                          <td class="cell-with-media">
+                            <span>{$cdkey_type_list['gokaurl']}</span>
+                          </td>
+                          <td class="text-center">
+                            <a class="badge badge-primary" href="{:url('index/price_edit',['id'=>$cdkey_type_list['id']])}" >编辑</a>
+                            <a class="badge badge-danger" href="{:url('index/price_del',['del_id'=>$cdkey_type_list['id'],'Ryan_key'=>$Ryan_key,'Ryan_time'=>$Ryan_time])}" >删除</a>
+                          </td>
+                          <td class="text-right bolder nowrap">
+                            <span class="text-success">¥ {$cdkey_type_list['cost_price']}</span>
+                          </td>
+                        </tr>
+                        {/volist} 
+                      </tbody>
+                    </table>
+                  </div>
+                </div> 
+
+          <!--<div class="form-group">
+            <label for=""> APP名称</label><input class="form-control" data-error="Your email address is invalid" placeholder="Enter email" required="required" type="email">
+            <div class="help-block form-text with-errors form-control-feedback"></div>
+          </div>--->
+
+
+
+
+
+          <div class="form-buttons-w">
+           
+            <a class="btn btn-primary " href="<?php echo url('index/price_add'); ?>" > 新增</a>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+<!--------------------
+START - Support Agents
+-------------------->
+<div class="element-wrapper">
+  <h6 class="element-header">
+    管理员
+  </h6>
+  <div class="element-box-tp">
+    
+{volist name="admin_list" id="vo"} 
+    <div class="profile-tile">
+      <a class="profile-tile-box" >
+        <div class="pt-avatar-w">
+          <img alt="" src="/public/static/v4/img/Ryan.png">
+        </div>
+        <div class="pt-user-name">
+         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+        </div>
+      </a>
+      <div class="profile-tile-meta">
+        <ul>
+          <li>
+            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+          </li>
+          <li>
+            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+          </li>
+          <li>
+            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+          </li>
+        </ul>
+        <div class="pt-btn">
+          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+        </div>
+      </div>
+    </div>
+{/volist} 
+    
+
+  </div>
+</div>
+
+          </div>
+ 

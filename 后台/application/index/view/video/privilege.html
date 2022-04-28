@@ -1,0 +1,204 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row">
+                <div class="col-sm-12 col-xxxl-6">
+                  <div class="element-wrapper">
+                    <div class="element-actions d-none d-sm-block">
+                      <a class="btn btn-primary btn-sm" href="<?php echo url('video/add_privilege'); ?>"><i class="os-icon os-icon-edit-3"></i><span>新增</span></a>
+                    </div>
+                    <h6 class="element-header">
+                      特权影视
+                    </h6>
+                    <div class="element-box">
+                      <div class="table-responsive">
+                        <table class="table table-lightborder">
+                          <thead>
+                            <tr>
+                              <th>
+                                排序
+                              </th>
+                              <th>
+                                标题
+                              </th>
+                              <th class="text-right">
+                                图标
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="privilege_list" id="vo"}    
+                            <tr onclick="window.open('<?php echo url('video/edit_privilege'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['sort']}</span>
+                                
+                              </td>
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['name']}</span>
+
+                              </td>
+                              
+                              <td  class="text-right">
+                                <div class="cell-image-list">
+
+                                  <div class="cell-img" style="background-image: url(<?php if(strpos($vo['picurl'],'http://') !== false){  echo $vo['picurl']; }else if(strpos($vo['picurl'],'https://') !== false){  echo $vo['picurl'];  }else{ echo input('server.REQUEST_SCHEME') . '://' . input('server.SERVER_NAME') . $vo['picurl'] ; }  ?>)"></div>
+                                  
+                                </div>
+                              </td>
+
+                              
+                            </tr>
+                            
+                            {/volist} 
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="d-none d-xxxl-block col-xxxl-6">
+                  <!--START - Questions per Product-->
+                  <div class="element-wrapper">
+          
+                    <h6 class="element-header">
+                      接口信息
+                    </h6>
+                    <div class="element-box">
+                      <div class="os-progress-bar primary">
+                        <div class="bar-labels">
+                          <div class="bar-label-left">
+                            <span class="bigger">①</span>
+                          </div>
+                          <div class="bar-label-right">
+                            <span class="info">{:advert('8')}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="os-progress-bar primary">
+                        <div class="bar-labels">
+                          <div class="bar-label-left">
+                            <span class="bigger">②</span>
+                          </div>
+                          <div class="bar-label-right">
+                            <span class="info">{:advert('9')}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="os-progress-bar primary">
+                        <div class="bar-labels">
+                          <div class="bar-label-left">
+                            <span class="bigger">③</span>
+                          </div>
+                          <div class="bar-label-right">
+                            <span class="info">{:advert('10')}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="os-progress-bar primary">
+                        <div class="bar-labels">
+                          <div class="bar-label-left">
+                            <span class="bigger">④</span>
+                          </div>
+                          <div class="bar-label-right">
+                            <span class="info">{:advert('11')}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="os-progress-bar primary">
+                        <div class="bar-labels">
+                          <div class="bar-label-left">
+                            <span class="bigger">⑤</span>
+                          </div>
+                          <div class="bar-label-right">
+                            <span class="info">{:advert('12')}</span>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+       
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  API / JSON
+                </h6>
+                <div class="element-box-tp">
+                  <div class="el-buttons-list full-width">
+                    <?php if(empty(advert('13')) || empty(advert('14'))){ echo '<a class="btn btn-white btn-sm"><i class="os-icon os-icon-delivery-box-2"></i><span>内置 ① 未设置</span></a>'; }else{ echo '<span class="btn btn-primary btn-sm"><i class="os-icon os-icon-delivery-box-2"></i><span>内置 ① 已设置</span></span>'; } ?>
+                    <?php if(empty(advert('15')) || empty(advert('16'))){ echo '<a class="btn btn-white btn-sm"><i class="os-icon os-icon-delivery-box-2"></i><span>内置 ② 未设置</span></a>'; }else{ echo '<span class="btn btn-primary btn-sm"><i class="os-icon os-icon-delivery-box-2"></i><span>内置 ② 已设置</span></span>'; } ?>
+                  </div>
+                  
+                  <br>
+  
+                  <div class="el-buttons-list full-width">
+                    <span class="btn btn-danger btn-sm"><i class="os-icon os-icon-delivery-box-2"></i><span>
+                    <?php if(advert('301') !== '1'){ echo '当前正在使用：内置 ② '; }else{ echo '当前使用：内置 ①'; } ?>
+                      </span></span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-wrapper">
+                 {volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                {/volist} 
+                </div>
+              </div>
+
+            </div>
+            
+          </div>

@@ -1,0 +1,144 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              <div class="row">
+                <div class="col-sm-12 col-xxxl-12">
+                  <div class="element-wrapper">
+                    <div class="element-actions d-none d-sm-block">
+                      <a class="btn btn-primary btn-sm" href="<?php echo url('live/add_tv'); ?>"><i class="os-icon os-icon-edit-3"></i><span>新增</span></a>
+                    </div>
+                    <h6 class="element-header">
+                      专题直播
+                    </h6>
+                    <div class="element-box">
+                      <div class="table-responsive">
+                        <table class="table table-lightborder">
+                          <thead>
+                            <tr>
+                              <th>
+                                ID
+                              </th>
+                              <th>
+                                排序
+                              </th>
+                              <th>
+                                标题
+                              </th>
+                              <th>
+                                简介
+                              </th>
+                              <th>
+                                状态
+                              </th>
+                              <th class="text-right">
+                                图标
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="live_special" id="vo"}    
+                            <tr onclick="window.open('<?php echo url('live/edit_tv'); ?>?edit_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}')" style="cursor:pointer">
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['id']}</span>
+                                
+                              </td>
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['sort']}</span>
+                                
+                              </td>
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['name']}</span>
+
+                              </td>
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['introduce']}</span>
+
+                              </td>
+                              
+                              <td class="nowrap">
+                                <span class="smaller ">{$vo['state']}</span>
+
+                              </td>
+                              
+                              <td  class="text-right">
+                                <div class="cell-image-list">
+
+                                  <div class="cell-img" style="background-image: url(<?php if(strpos($vo['picture'],'http://') !== false){  echo $vo['picture']; }else if(strpos($vo['picture'],'https://') !== false){  echo $vo['picture'];  }else{ echo input('server.REQUEST_SCHEME') . '://' . input('server.SERVER_NAME') . $vo['picture'] ; }  ?>)"></div>
+                                  
+                                </div>
+                              </td>
+
+                              
+                            </tr>
+                            
+                            {/volist} 
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    {$live_special->render()}
+                  </div>
+                </div>
+                
+
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            <div class="content-panel">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  管理员
+                </h6>
+                <div class="element-wrapper">
+                 {volist name="admin_list" id="vo"} 
+                    <div class="profile-tile">
+                      <a class="profile-tile-box" >
+                        <div class="pt-avatar-w">
+                          <img alt="" src="/public/static/v4/img/Ryan.png">
+                        </div>
+                        <div class="pt-user-name">
+                         <?php   echo  substr_replace($vo['username'],'****',3,4); ?>
+                        </div>
+                      </a>
+                      <div class="profile-tile-meta">
+                        <ul>
+                          <li>
+                            最近登录时间：<strong><?php echo  date('Y-m-d H:i:s',$vo['logintime']); ?></strong>
+                          </li>
+                          <li>
+                            登录次数：<strong><?php echo  $vo['count']  ?> 次</strong>
+                          </li>
+                          <li>
+                            微信：<strong><?php   echo  $vo['weichat'] ?></strong> 
+                          </li>
+                        </ul>
+                        <div class="pt-btn">
+                          <a class="btn btn-secondary btn-sm" href="#"><?php   echo  $vo['Source'] ?></a>
+                        </div>
+                      </div>
+                    </div>
+                {/volist} 
+                </div>
+              </div>
+
+            </div>
+            
+          </div>

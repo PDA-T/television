@@ -1,0 +1,32 @@
+<div class="all-wrapper menu-side with-pattern">
+      <div class="auth-box-w wider centered">
+		<br><br>
+        <h5 class="auth-header">
+          Application Authentication
+        </h5>
+        <div class="logged-user-w">
+          <div class="avatar-w">
+            <img alt="" src="/public/static/v4/img/Ryan.png">
+          </div>
+          <div class="logged-user-name">
+           {:name()}
+          </div>
+          <div class="logged-user-role">
+            {:power()}
+          </div>
+        </div>
+       <form class="form-material"    role="form" id="form1" method="post" action="{:url('index/appId')}">
+          <div class="form-group">
+            <label for="">请输入 APPID 勿随意修改</label>
+            <input type="text" class="form-control"   value="{:advert('47')}" name="appId" data-validate="required,minlength[4],maxlength[18]" placeholder="A************">
+            <input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" ><input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+            <div class="pre-icon os-icon os-icon-fingerprint"></div>
+          </div>
+          <div class="buttons-w">
+            <button class="btn btn-primary">确认</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+

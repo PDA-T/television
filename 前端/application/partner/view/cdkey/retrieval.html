@@ -1,0 +1,103 @@
+
+
+<div class="lime-container">
+    <div class="lime-body">
+<div class="container">
+
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="invoice-header">
+                                                <h5>激活码检索</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="invoice-header">
+                                                <h6 class="float-right">当前还可以查询 {$retrieval_num} 次</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+				
+									<div class="row">
+				                        <div class="col-xl">
+				                            <div class="card">
+				                                <div class="card-body">
+				                                    <form    role="form" id="form1" method="post" action="{:url('partner/cdkey/retrieval')}" >
+				                                        <div class="form-group">
+				                                            <input type="text" class="form-control" value="{$cdkey}"  name="cdkey" aria-describedby="emailHelp" placeholder="请输入想要检索的激活码">
+				                                        </div>
+				                                        
+				                                        
+
+				                                        
+				                                        
+														<input type="hidden" name="Ryan_time"  id="Ryan_time"   value="{$Ryan_time}" >
+														<input type="hidden" name="Ryan_key"  id="Ryan_key"   value="{$Ryan_key}" >
+				                                        <button class="btn btn-primary" type="submit"  id="submit">检索</button>
+				                                    </form>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </div>
+                                    
+                                    
+                                    
+    								<div class="row">
+                                        <div class="col-sm-8 m-t-xxl">
+                                            <div class="invoice-info">
+                                                <span class="bold m-b-md d-block">激活码检索结果:<code> {$cdkey} </code></span>
+                                                <p> {$cdkey_state} </p> <br>
+                                                <p style=" color: #cccccc; "> 每小时可进行：<code>{:advert('126')}</code> 次检查操作；每小时重置 请合理使用；</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <?php if($cdkey_data_is == 1){ ?>
+                                               
+	                                        <div class="col-sm-4 m-t-xxl">
+	                                            <div class="invoice-info">
+	                                             
+	                                               <?php if($cdkey_use_is == 1){ ?>
+	                                                	<p>激活码类型: <span>{$cdkey_data['name']}</span></p>
+		                                                <p class="bold">使用账户： <span>{$use_user_name} / {$use_user_id} </span></p>
+	                                                	<p>使用时间: <span><?php echo  date('Y-m-d H:i:s',$cdkey_data['ctime']); ?></span></p>
+		                                                <p>使用账户会员到期时间： <span>
+		                                                	<?php if($use_user_vip == '1'){ 
+		                                                		echo '永久';
+		                                                	}else{
+		                                                		echo  date('Y-m-d H:i:s',$use_user_vip);
+		                                                	} ?>
+		                                                	
+		                                                	</span></p>
+		                                                
+	                                                <button type="button" class="btn btn-danger btn-block"> {$cdkey} 已被使用</button>
+	                                               
+	                                               <?php  }else{ ?>
+	                                               
+	                                                	<p>激活码类型: <span>{$cdkey_data['name']}</span></p>
+	                                                	<p>提取时间: <span><?php echo  date('Y-m-d H:i:s',$cdkey_data['ctime']); ?></span></p>
+		                                                
+		                                                	                                               
+	                                                <button type="button" class="btn btn-primary btn-block">未被使用</button>
+	                                                
+	                                               <?php  } ?>
+	                                               
+	                                            </div>
+	                                        </div>
+	                                        
+                                      <?php  } ?>
+                                      
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+

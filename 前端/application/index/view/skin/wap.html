@@ -1,0 +1,225 @@
+<div class="content-i">
+            <div class="content-box">
+            	
+            	<div class="row">
+
+<div class="col-sm-12">
+    <div class="element-wrapper">
+      <div class="element-box">
+          <h5 class="form-header">
+            模板选择 - WAP下载页
+          </h5>
+          <div class="form-desc">
+            尽量在5分钟内操作完毕.
+          </div>
+          
+            后续开放自定义 自由发挥.
+          
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新操作！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+            		</div>
+
+
+
+
+            	<div class="row">
+
+            		<div class="col-sm-2">
+    <div class="user-profile compact">
+        <br>
+      <div align="center" >
+      	<img src="https://i.loli.net/2020/05/11/z8dNlsH5EZqy4JG.png" class="img-responsive"  style="display: inline-block; height: auto; max-width: 100%;">
+
+
+      </div>
+      <div class="up-controls">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="value-pair">
+              <div class="label">
+                模板编号：WAP_ONE
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+
+
+              <?php if($skin == 1){?>
+              <div class="value badge badge-pill badge-success">  正在使用    </div>
+              <?php } else{  ?>
+              <a class="btn btn-primary btn-sm" href="<?php echo url('skin/wap'); ?>?skin_id=1&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-crown"></i>  切换 </a>
+              <?php } ?>
+            
+            
+          </div>
+        </div>
+      </div>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+
+                    <div class="col-sm-2">
+                        <div class="user-profile compact">
+                            <br>
+                            <div align="center" >
+                                <img src="https://i.loli.net/2020/02/09/1uZtlvmpd5xVfB3.png" class="img-responsive"  style="display: inline-block; height: auto; max-width: 100%;">
+
+
+                            </div>
+                            <div class="up-controls">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="value-pair">
+                                            <div class="label">
+                                            模板编号：WAP_TWO
+                                             </div>
+                                        </div>
+                                    </div>
+							          <div class="col-sm-6 text-right">
+							
+							
+							              <?php if($skin == 2){?>
+							              <div class="value badge badge-pill badge-success">  正在使用    </div>
+							              <?php } else{  ?>
+							              <a class="btn btn-primary btn-sm" href="<?php echo url('skin/wap'); ?>?skin_id=2&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-crown"></i>  切换 </a>
+							              <?php } ?>
+							            
+							            
+							          </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+              
+              
+
+         
+              
+              
+              
+              
+            </div>
+
+
+  <script src="/public/static/v4/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+            $("#ad_content").hide();
+            $("#ad_audit").change(function() {
+                if($(this).val() == 3 ) {
+                    $("#ad_content").show();
+                } else{
+                    $("#ad_content").hide();
+                }
+            })
+        })
+ </script>
+
+
+
+  
+  
+
+  <script type="text/javascript">
+
+  var maxtime = 5*60; //  
+
+            function CountDown() {
+
+                if (maxtime >= 0) {
+
+                    minutes = Math.floor(maxtime / 60);
+
+                    seconds = Math.floor(maxtime % 60);
+
+                    msg = "离本次会话超时还剩" + minutes + "分" + seconds + "秒";
+
+                    document.all["timer"].innerHTML = msg;
+
+               //   if (maxtime == 2) document.all["timer"].innerHTML = '';
+						
+                        --maxtime;
+
+                } else{
+
+                    clearInterval(timer);
+
+                     document.all["timer"].innerHTML = '出于安全原因,本次会话已超时！ 请刷新页面后重新填写！';
+               		 document.getElementById("buttonid").click();
+
+                }
+
+            }
+
+            timer = setInterval("CountDown()", 1000);     
+
+ </script>
+
+
+
+
+
+
+
+
+
+ <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal" data-toggle="modal" type="button" id="buttonid" style="display:none;">Modal with text only</button>
+          
+       <div aria-hidden="true" class="onboarding-modal modal fade animated" id="onboardingTextModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-centered" role="document">
+          <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span class="close-label">关闭</span><span class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-media">
+              <img alt="" src="/public/static/v4/img/bigicon2.png" width="200px">
+            </div>
+            <div class="onboarding-content with-gradient">
+              <h4 class="onboarding-title">
+                出于安全原因,本次会话已超时！
+              </h4>
+              <div class="onboarding-text">
+                请刷新页面后重新填写提交！
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

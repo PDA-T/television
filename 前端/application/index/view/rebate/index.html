@@ -1,0 +1,103 @@
+<div class="content-i">
+            <div class="content-box">
+              
+              
+              <div class="row pt-4">
+                <div class="col-sm-12">
+                  <!--START - Recent Ticket Comments-->
+                  <div class="element-wrapper">
+                    <h6 class="element-header">
+                      提现申请
+                    </h6>
+                    <div class="element-box-tp">
+                      <div class="table-responsive">
+                        <table class="table table-padded">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>
+                                用户
+                              </th>
+                              <th>
+                                支付宝
+                              </th>
+                              <th>
+                                微信
+                              </th>
+                              <th  class="text-center">
+                                金额
+                              </th>
+                              <th>
+                                账户状态
+                              </th>
+                              <th class="row-actions">
+                                操作
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {volist name="cash_out_list" id="vo"}  
+                            <tr>
+                              <td class="text-center">
+                                <span class="smaller lighter">{$vo['id']}</span>
+                              </td>
+                              <td>
+                                <div class="user-with-avatar">
+                                  <img alt="" src="/public/static/v4/img/Ryan.png"><span>{$vo['username']}</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="smaller lighter">
+                                 {$vo['zfb']}  <div class="cell-img-more"> {$vo['zfb_name']} </div>
+                                </div>
+                              </td>
+                              <td>
+                                <span class="smaller lighter">{$vo['weichat']}</span>
+                              </td>
+                              <td class="text-center">
+                                <div class="value badge badge-pill badge-primary">¥ {$vo['txje']} </div>
+                              </td>
+                              <td class="nowrap">
+                                                            
+                            <?php  if($vo['status']=='1') {  ?>
+                            	 <div class="status-pill green" data-title="正常" data-toggle="tooltip" ></div>
+                                <span  class="smaller lighter">正常</span>
+                            <?php }else{  ?>
+                           		 <div class="status-pill red" data-title="已禁封" data-toggle="tooltip" ></div>
+                                <span  class="smaller lighter">已禁封</span>
+                            <?php }  ?>
+                                
+                              </td>
+                              <td class="row-actions">
+                                <a class="primary" href="<?php echo url('rebate/cash_application'); ?>?application_id={$vo['id']}&Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}"><i class="os-icon os-icon-wallet-loaded"></i></a>
+                              </td>
+                            </tr>
+                           
+                            
+                            
+                           {/volist}  
+                            
+
+                          </tbody>
+                        </table>
+                        
+                        {$cash_out_list->render()}
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--END - Recent Ticket Comments-->
+                </div>
+              </div>
+              
+
+               
+              <div class="floated-chat-btn" onclick="window.location.href = '<?php echo url('rebate/withdrawals_record'); ?>?Ryan_time={$Ryan_time}&Ryan_key={$Ryan_key}'">
+
+                <span><i class="os-icon os-icon-tasks-checked"></i><span>提现记录</span></span>
+
+              </div>
+              
+              
+            </div>
+          </div>
